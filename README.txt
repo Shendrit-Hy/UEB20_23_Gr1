@@ -1,0 +1,1 @@
+# Projekti ne WEB nga Shendrit Hyseni, Valdet Nurkasa dhe yjet, Yll Kosumi, Yll Jupolli dhe Yll Pllana
