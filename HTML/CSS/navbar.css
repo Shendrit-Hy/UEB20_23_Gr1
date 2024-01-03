@@ -3,11 +3,11 @@ body {
     background-color: black;
     display: flex;
     justify-content: center;
-  }
-  .container {
+}
+.container {
     width: 90%;
     /* background-color: red; */
-  }
+}
 .navbar {
     /* background-color: lime; */
     width: 100%;
