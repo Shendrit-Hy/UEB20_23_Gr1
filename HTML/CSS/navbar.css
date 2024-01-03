@@ -1,3 +1,13 @@
+body {
+    margin: 0px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+  }
+  .container {
+    width: 90%;
+    /* background-color: red; */
+  }
 .navbar {
     /* background-color: lime; */
     width: 100%;
