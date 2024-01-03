@@ -1,0 +1,27 @@
+#big-title {
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0px;
+  margin-top: 20px;
+}
+.medium-title {
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 10px;
+}
+.photo {
+    width: 100%px;
+    height: 400px;
+  display: flex;
+  justify-content: center;
+}
