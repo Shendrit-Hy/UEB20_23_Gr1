@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    body {
+    margin: 0px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    color: white;
+    }
+    .container{
+      width: 90%;
+    }
+
+    #bmi-calculator{
+      padding-bottom:30px;
+      background-image: url(fotoBMI.png);
+      background-size: cover;
+    }
+
+    .form-control, .custom-select, #submit{
+      text-align: center;
+      width: 300px;
+      border-radius: 50px;
+      border: 2px solid #0F969C;
+      background-color: white;
+    }
+
+    .form-control:focus, .custom-select:focus{
+      box-shadow: none;
+    }
+
+    #submit{
+      background-color:#0F969C;
+    }
+
+    .custom-table {
+      border-collapse: separate;
+      width: 100%;
+      border-radius: 50px;
+      border: 2px solid #0F969C;
+      overflow: hidden;
+    }
+
+    .custom-table th, .custom-table td {
+      padding: 8px;
+      text-align: center;
+    }
+
+    .right-border{
+      border-right: 1px solid white;
+    }
+
+    .table .thead-dark th{
+      background-color:#0F969C;
+      border-bottom:none;
+      border-top: none;
+    }
+
+    .mt-6 {margin-top: 60px;}
+    .mt-7 {margin-top: 70px;}
+    .mb-6 {margin-bottom: 60px;}
+    .mb-7 {margin-bottom: 70px;}
+
+    #disclaimer{
+      height: 400px;
+      background-image: url(/HTML/disclaimer.png);
+      background-size: cover;
+    }
+
+    #content{
+      padding: 100px;
+      height: inherit;
+    }
+
+    #content h1{
+      color: #0F969C;
+    }
+
+    #content p{
+      color: white
+    }
+  </style>
+  <link rel="stylesheet" href="CSS/navbar-per-faqe-bootstrap.css">
+  <title>BMI Calculator</title>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar1">
+      <div class="logo1">
+          <img class="full-logo1" src="logo.png" alt="">
+      </div>
+      <div class="menu1">
+          <ul class="menu-ul1">
+              <div class="menu-items1"><li><a href="#">Home</a></li></div>
+              <div class="menu-items1"><li><a href="#">Home</a></li></div>
+              <div class="menu-items1"><li><a href="#">Home</a></li></div>
+              <div class="menu-items1"><li><a href="#">Home</a></li></div>
+          </ul>
+      </div>
+    </nav>
+    <div class="container mt-5 mb-7"  id="bmi-calculator">
+      <div class="container">
+        <div class="page-header text-center mb-5"> 
+          <h1>CALCULATE YOUR BMI</h1>
+          <h3>GET YOUR PERSONALIZED PLAN OF TRAINING AND NUTRITION</h3>
+        </div> 
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="form-container">
+              <form name="bmi" onsubmit="calculate(); return false">
+                <div class="form-group row">
+                  <div class="col-sm-10">
+                    <select class="custom-select custom-select-lg costum-bootstrap-form" name="genderInput" required>
+                      <option selected disabled>Gender</option>
+                      <option value="1">Male</option>
+                      <option value="2">Female</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-10">
+                    <input type="number" name="heightInput" class="form-control form-control-lg costum-bootstrap-form" id="colFormLabelLg" placeholder="Height (cm)" step=0.1 min=0 required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-10">
+                    <input type="number" name="weightInput" class="form-control form-control-lg costum-bootstrap-form" id="colFormLabelLg" placeholder="Weight (kg)" step=0.1 min=0 required>
+                  </div>
+                </div>
+                <div class="col-auto row">
+                  <button type="submit" class="btn btn-primary btn-lg" id="submit">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col" style="text-align: center;">
+            <div>
+              <h1 style="padding-top: 20px;">What is your BMI?</h1>
+            </div>
+            <div class="row">
+              <div class="col align-self-center">
+                <p id="whatIsYourBMI" style="padding-top:30px ;">
+                Body Mass Index (BMI) is a numerical measure that assesses the relationship between an individual's weight and height. BMI is commonly used to categorize people into groups such as underweight, normal weight, overweight, and various levels of obesity.
+              </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mb-7" id="table">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <h3>BASED ON YOUR PREFERENCES CHECK OUT THIS TABLE FOR NUTRITION INFO</h3>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <table class="table custom-table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col" class="right-border">Body Goal</th>
+              <th scope="col">Calories</th>
+              <th scope="col">Protein</th>
+              <th scope="col">Carbohydrates</th>
+              <th scope="col">Fat</th>
+              <th scope="col">Fiber</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="right-border">Lose Weight</th>
+              <td class="right-border">1800</td>
+              <td class="right-border">150</td>
+              <td class="right-border">150</td>
+              <td class="right-border">60</td>
+              <td>60</td>
+            </tr>
+            <tr>
+              <th scope="row" class="right-border">Maintain Weight</th>
+              <td class="right-border">2200</td>
+              <td class="right-border">180</td>
+              <td class="right-border">200</td>
+              <td class="right-border">80</td>
+              <td>80</td>
+            </tr>
+            <tr>
+              <th scope="row" class="right-border">Gain Muscle Mass</th>
+              <td class="right-border">2500</td>
+              <td class="right-border">200</td>
+              <td class="right-border">250</td>
+              <td class="right-border">100</td>
+              <td>100</td>
+            </tr>
+            <tr>
+              <th scope="row" class="right-border">Bulk (Increase)</th>
+              <td class="right-border">2800</td>
+              <td class="right-border">220</td>
+              <td class="right-border">300</td>
+              <td class="right-border">120</td>
+              <td>120</td>
+            </tr>
+            <tr>
+              <th scope="row" class="right-border">Bulk (Intense)</th>
+              <td class="right-border">3200</td>
+              <td class="right-border">250</td>
+              <td class="right-border">350</td>
+              <td class="right-border">140</td>
+              <td>140</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="container text-center mb-7" id="disclaimer">
+      <div class="row" id="content">
+        <div class="col align-self-center">
+          <h1>DISCLAIMER!</h1>
+          <p><b>
+            The table above is just an overall measurement of macros that you need, this might not get you the exact results that you want because the table is not highly accurate and this can lead to you not getting better. We recommend that you consult one of our personal trainers that are all qualified for giving you proper and exact nutrition diets. You can do this via an online meeting or coming to the gym and having a one on one talk with one of our trainers.
+            </b>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script>
+    var height = document.bmi.heightInput
+    var weight = document.bmi.weightInput
+    var p = document.getElementById("whatIsYourBMI")
+
+    var myLink = document.createElement("a");
+    myLink.href = "#";
+    myLink.textContent = "Here";
+
+    function calculate(){
+      var BMI = (parseFloat(weight.value)/(parseFloat(height.value) * parseFloat(height.value))) * 10000
+      if (BMI < 18.5){
+        p.innerHTML = "Your BMI is = <b>" + BMI + "</b><br><br>That means you are <b>Underweight</b>!<br>If you want to see how to gain weights click "
+        myLink.href = "#"
+        myLink.textContent = "Underweight"
+        p.appendChild(myLink)
+      }
+      else if (BMI >= 18.5 && BMI <= 24.9){
+        p.innerHTML = "Your BMI is = <b>" + BMI + "</b><br><br>That means you are <b>Normal Weight</b>!<br>If you want to see how can you maintain this weight click "
+        myLink.href = "#"
+        myLink.textContent = "Maintain a healthy weight"
+        p.appendChild(myLink)
+      }
+      else if (BMI >= 25 && BMI <= 29.9){
+        p.innerHTML = "Your BMI is = <b>" + BMI + "</b><br><br>That means you are <b>Overweight</b>!<br>If you want to see how can you lose weight click "
+        myLink.href = "#"
+        myLink.textContent = "Overweight"
+        p.appendChild(myLink)
+      }
+      else{
+        p.innerHTML = "Your BMI is = <b>" + BMI + "</b><br><br>That means you are <b>Obese</b>!<br>If you want to see how can you lose weight click "
+        myLink.href = "#"
+        myLink.textContent = "Obesity"
+        p.appendChild(myLink)
+      }
+    }
+  </script>
+</body>
+</html>
