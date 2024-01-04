@@ -4,11 +4,11 @@ body {
     display: flex;
     justify-content: center;
 }
-.container {
+.container1 {
     width: 90%;
     /* background-color: red; */
 }
-.navbar {
+.navbar1 {
     /* background-color: lime; */
     width: 100%;
     height: 70px;
@@ -18,16 +18,16 @@ body {
     /* margin-top: 10px; */
     box-shadow: 0px 3px 10px 0px rgb(38, 38, 38);
   }
-  .logo {
+  .logo1 {
     width: 30%;
     height: 100%;
     /* background-color: honeydew; */
   }
-  .full-logo {
+  .full-logo1 {
     height: 95%;
     width: 45%;
   }
-  .menu {
+  .menu1 {
     width: 60%;
     height: 100%;
     /* background-color: hotpink; */
@@ -35,7 +35,7 @@ body {
     justify-content: space-between;
     align-items: center;
   }
-  .menu-items {
+  .menu-items1 {
     width: 140px;
     height: 35px;
     background-color: black;
@@ -45,15 +45,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 17.5px 0px;
   }
-  .menu-ul {
+  .menu-ul1 {
     width: 100%;
     list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0px;
   }
-  .menu-ul a {
+  .menu-ul1 a {
     text-decoration: none;
     color: white;
     text-align: center;
