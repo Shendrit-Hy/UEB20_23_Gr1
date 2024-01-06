@@ -4,31 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="CSS/navbar.css">
-    <link rel="stylesheet" href="CSS/successful-purchase.css">
+    <link rel="stylesheet" href="/CSS/navbar.css">
+    <link rel="stylesheet" href="/CSS/signup-login.css">
+    <link rel="stylesheet" href="/CSS/scrollbar.css">
+    <link rel="stylesheet" href="/CSS/footer.css">
+    <link rel="stylesheet" href="/CSS/successful-purchase.css">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=GFS Neohellenic' rel='stylesheet'>
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar">
-            <div class="logo">
-                <img class="full-logo" src="logo.png" alt="">
-            </div>
-            <div class="menu">
-                <ul class="menu-ul">
-                    <div class="menu-items"><li><a href="#">Home</a></li></div>
-                    <div class="menu-items"><li><a href="#">Home</a></li></div>
-                    <div class="menu-items"><li><a href="#">Home</a></li></div>
-                    <div class="menu-items"><li><a href="#">Home</a></li></div>
-                </ul>
-            </div>
+    <div class="nav-container ">
+        <div class="logo-container">
+          <img src="/Images/logo.png" alt="logo" width="80px" height="80px">
+        </div>
+        <nav class="">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+          <a href="#">Portfolio</a>
+          <a href="#">Contact</a>
+          <div class="animation start-home"></div>
         </nav>
+        <div class="signup-login">
+            <a href="#" class="signup"> Sign Up </a>
+            <a href="#" class="login"> Log In </a>
+        </div>
+    </div>
+    <div class="container">
         <div class="main">
             <p id="big-title">YOUR PURCHASE WAS SUCCESSFUL</p>
             <p class="medium-title">YOU WILL GET YOUR PRODUCT IN THE FOLLOWING WEEK DURING WORK DAYS</p>
             <div class="photo">
-                <img src="check 1.png" alt="">
+                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                </svg>
             </div>
             <p class="medium-title">THANK YOU FOR CHOOSING US <br>
                 COME AGAIN AND BUY ANYTHING YOU WANT</p>
