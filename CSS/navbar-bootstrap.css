@@ -6,12 +6,11 @@ body{
 .nav-container {
   padding-right: 120px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content:space-evenly;
   align-items: center;
-  height: 100px;
   width: 100vw;
+  height: 100px;
   box-shadow: 0 9px 10px 0 rgba(0,0,0,.5);
-  margin-bottom: 20px;
 }
 
 nav{
