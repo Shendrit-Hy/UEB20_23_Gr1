@@ -31,7 +31,7 @@
   </div>
   <div class="container">
     <div class="item-card">
-      <img src="#" alt="#">
+      <img id="product-image" src="#" alt="#">
     </div>
     <div class="pay">
       <div class="container-card preload">
@@ -160,5 +160,31 @@
     </div>
   </div>
   <script src="/JavaScript/card-purchase.js"></script>
+  <script>
+    window.onload = function () {
+      var product = document.getElementById('product-image');
+      var urlParams = new URLSearchParams(window.location.search);
+      var productId = urlParams.get('product');
+
+      const productImageMap = {
+        '1':'/Images/item-1.png',
+        '2':'/Images/item-1.png',
+        '3':'/Images/item-1.png',
+        '4':'/Images/item-1.png',
+        '5':'/Images/item-1.png',
+        '6':'/Images/item-1.png',
+        '7':'/Images/item-1.png',
+        '8':'/Images/item-1.png',
+        '9':'/Images/item-1.png'
+      }
+
+      const productPath = productImageMap[productId];
+
+      if (productId == 1){
+        product.src = productPath;
+        console.log("testing...")
+      }
+    }
+  </script>
 </body>
 </html>

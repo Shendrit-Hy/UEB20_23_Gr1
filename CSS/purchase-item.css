@@ -15,7 +15,7 @@ body{
 }
 
 .item-card{
-  align-items: center;
+  text-align: center;
   width:400px;
   height:500px;
   padding: 50px;

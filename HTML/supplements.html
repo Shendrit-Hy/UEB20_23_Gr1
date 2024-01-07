@@ -48,7 +48,7 @@
                     </div>
                     <div class="card-footer">
                         <p class="card-price">55$</p>
-                        <button class="card-button">Buy</button>
+                        <button class="card-button" onclick="redirectToBuyPage(1); return false">Buy</button>
                     </div>
                 </div>
                 <div class="card">
@@ -57,7 +57,7 @@
                     </div>
                     <div class="card-footer">
                         <p class="card-price">80$</p>
-                        <button class="card-button">Buy</button>
+                        <button class="card-button" onclick="redirectToBuyPage(2); return false">Buy</button>
                     </div>
                 </div>
                 <div class="card">
@@ -66,7 +66,7 @@
                     </div>
                     <div class="card-footer">
                         <p class="card-price">60$</p>
-                        <button class="card-button">Buy</button>
+                        <button class="card-button" onclick="redirectToBuyPage(3); return false">Buy</button>
                     </div>
                 </div>
             </div>
@@ -83,7 +83,7 @@
                     </div>
                     <div class="card-footer">
                         <p class="card-price">70$</p>
-                        <button class="card-button">Buy</button>
+                        <button class="card-button" onclick="redirectToBuyPage(4); return false">Buy</button>
                     </div>
                 </div>
                 <div class="card">
@@ -92,7 +92,7 @@
                     </div>
                     <div class="card-footer">
                         <p class="card-price">30$</p>
-                        <button class="card-button">Buy</button>
+                        <button class="card-button" onclick="redirectToBuyPage(5); return false">Buy</button>
                     </div>
                 </div>
                 <div class="card">
@@ -198,5 +198,10 @@
         </section>
         <section class="bottom">© 2023 Super Nova</section>
       </footer>
+      <script>
+        function redirectToBuyPage(productId) {
+            window.location.href = 'purchase-item.html?product=' + productId;
+        }
+    </script>
 </body>
 </html>
