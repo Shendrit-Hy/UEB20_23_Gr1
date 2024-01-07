@@ -10,6 +10,19 @@
   <link rel="stylesheet" href="/CSS/purchase-item.css">
   <link rel="stylesheet" href="/CSS/scrollbar.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>
+  <style>
+    @font-face {
+        font-family: 'Pre-Font';
+        src:url('/Fonts/Roboto-Medium.ttf'),
+            url('/Fonts/Roboto-Regular.ttf'),
+            url('/Fonts/Roboto-Black.ttf'),
+            url('/Fonts/Roboto-Bold.ttf')
+    }
+    pre{
+        font-family:'Pre-Font';
+    }
+    
+  </style>
 </head>
 <body>
   <div class="nav-container ">
@@ -31,7 +44,21 @@
   </div>
   <div class="container">
     <div class="item-card">
-      <img id="product-image" src="#" alt="#">
+        <img id="product-image" src="#" alt="NoProduct!">
+        <div class="add-quantity">
+            <button class="quantity-button" id="minus-button" onclick="subtractQuantity(); return false">-</button>
+            <div id="item-quantity">1</div>
+            <button class="quantity-button" id="plus-button" onclick="addQuantity(); return false">+</button>
+        </div>
+        <div class="total-price">
+            <pre class="price-container">Item Price :                           <div id="item-price">0.00</div> &euro;</pre>
+            <pre class="price-container">Tax Price :                             <div id="tax">0.00</div> &euro;</pre>
+            <hr class="horizontal-line">
+            <pre class="price-container total">Total Price :         <div id="total">0.00</div> &euro;</pre>
+        </div>
+        <div class="submit-button-container">
+            <input type="submit" class="submit-button" value="Purchase">
+        </div>
     </div>
     <div class="pay">
       <div class="container-card preload">
@@ -160,31 +187,5 @@
     </div>
   </div>
   <script src="/JavaScript/card-purchase.js"></script>
-  <script>
-    window.onload = function () {
-      var product = document.getElementById('product-image');
-      var urlParams = new URLSearchParams(window.location.search);
-      var productId = urlParams.get('product');
-
-      const productImageMap = {
-        '1':'/Images/item-1.png',
-        '2':'/Images/item-1.png',
-        '3':'/Images/item-1.png',
-        '4':'/Images/item-1.png',
-        '5':'/Images/item-1.png',
-        '6':'/Images/item-1.png',
-        '7':'/Images/item-1.png',
-        '8':'/Images/item-1.png',
-        '9':'/Images/item-1.png'
-      }
-
-      const productPath = productImageMap[productId];
-
-      if (productId == 1){
-        product.src = productPath;
-        console.log("testing...")
-      }
-    }
-  </script>
 </body>
 </html>

@@ -1,4 +1,57 @@
+let originalPrice = 0;
+
+var quantity = document.getElementById('item-quantity')
+var itemPrice = document.getElementById('item-price')
+var taxPrice = document.getElementById('tax')
+var totalPrice = document.getElementById('total')
+
+
 window.onload = function () {
+    var productImageID = document.getElementById('product-image');
+    var urlParams = new URLSearchParams(window.location.search);
+    var productId = urlParams.get('product');
+
+    const productImageMap = {
+        '1':'/Images/item-1.png',
+        '2':'/Images/item-2.png',
+        '3':'/Images/item-3.png',
+        '4':'/Images/item-4.png',
+        '5':'/Images/item-5.png',
+        '6':'/Images/item-6.png',
+        '7':'/Images/item-7.png',
+        '8':'/Images/item-8.png',
+        '9':'/Images/item-9.png'
+    }
+
+    const productPriceMap = {
+        '1':55.00,
+        '2':60.00,
+        '3':70.00,
+        '4':80.00,
+        '5':30.00,
+        '6':50.00,
+        '7':55.00,
+        '8':55.00,
+        '9':55.00,
+    }
+
+    originalPrice = productPriceMap[productId];
+
+    const productPath = productImageMap[productId];
+    const productPrice = productPriceMap[productId];
+
+    productImageID.src = productPath;
+    console.log("Testing...")
+
+    // var itemPrice = document.getElementById('item-price')
+    // var taxPrice = document.getElementById('tax')
+    // var totalPrice = document.getElementById('total')
+
+    itemPrice.innerHTML = (productPrice).toFixed(2);
+    taxPrice.innerHTML = ((productPrice/100)*18).toFixed(2)
+    totalPrice.innerHTML = (parseFloat(itemPrice.innerHTML) + parseFloat(taxPrice.innerHTML)).toFixed(2)
+
+
 
   const name = document.getElementById('name');
   const cardnumber = document.getElementById('cardnumber');
@@ -278,3 +331,44 @@ window.onload = function () {
       document.querySelector('.creditcard').classList.add('flipped');
   });
   };
+
+
+var tempPrice = 0;
+
+function addQuantity(){
+    var tempQuantity = parseInt(quantity.innerHTML);
+    tempQuantity += 1;
+    quantity.innerHTML = tempQuantity
+
+    if (tempPrice == 0){
+        tempPrice += originalPrice
+    }
+    tempPrice += originalPrice
+    itemPrice.innerHTML = tempPrice.toFixed(2)
+
+    taxPrice.innerHTML = ((tempPrice/100)*18).toFixed(2)
+
+    totalPrice.innerHTML = (parseFloat(taxPrice.innerHTML) + parseFloat(itemPrice.innerHTML)).toFixed(2)
+
+
+}
+
+function subtractQuantity(){
+    var tempQuantity = parseInt(quantity.innerHTML);
+    if (tempQuantity != 1){
+        tempQuantity -= 1;
+        quantity.innerHTML = tempQuantity
+
+        tempPrice = parseFloat(itemPrice.innerHTML)
+        tempPrice -= originalPrice
+        itemPrice.innerHTML = tempPrice.toFixed(2)
+
+        taxPrice.innerHTML = ((tempPrice/100)*18).toFixed(2)
+
+        totalPrice.innerHTML = (parseFloat(taxPrice.innerHTML) + parseFloat(itemPrice.innerHTML)).toFixed(2)
+
+    }
+
+
+
+}

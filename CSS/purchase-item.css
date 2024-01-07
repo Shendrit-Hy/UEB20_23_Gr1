@@ -1,3 +1,4 @@
+
 body{
   margin: 0px;
   padding: 0px;
@@ -12,12 +13,16 @@ body{
   display: flex;
   flex-flow: row;
   justify-content: space-evenly;
+  margin-bottom: 500px;
 }
 
 .item-card{
   text-align: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
   width:400px;
-  height:500px;
+  height:600px;
   padding: 50px;
   background-color: #0f969c;
   border-radius: 20px;
@@ -28,3 +33,93 @@ body{
   width: 330px;
   height: 390px;
 }
+
+.add-quantity {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.quantity-button{
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  font-size: xx-large;
+  border-radius: 10px;
+  border: 3px solid white;
+  background-color: transparent;
+  color: white;
+  line-height: 0;
+  box-shadow: 0 5px 7px 0 rgba(0,0,0,.5);
+  transition: 0.2s;
+}
+
+.quantity-button:hover{
+  background-color: white;
+  color: #0f969c;
+  cursor: pointer;
+}
+
+#minus-button{
+  padding-bottom: 5px;
+}
+
+#item-quantity{
+  font-size: x-large;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.total-price{
+  display: flex;
+  flex-flow: column;
+  align-items: start;
+  margin-top: 30px;
+  padding-left: 40%;
+  width: 100%;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.price-container{
+  margin: 5px;
+  display: flex;
+  flex-flow: row;
+}
+.total{
+  font-weight: bold;
+  font-size: x-large;
+}
+.horizontal-line{
+  margin:0;
+  display: flex;
+  flex-flow: row;
+  justify-items: left;
+  width: 70%;
+  border-color: white;
+}
+
+.submit-button-container{
+  margin-top: 20px;
+  width: 50%;
+}
+
+.submit-button{
+  border-radius: 30px;
+  box-shadow: 0 9px 10px 0 rgba(0,0,0,.5);
+  transition: 0.2s;
+  font-weight: bold;
+  border: none;
+}
+
+.submit-button:hover{
+  cursor: pointer;
+  background-color: #05616A;
+  color: white;
+  transition: 0.2s;
+}
+
+
