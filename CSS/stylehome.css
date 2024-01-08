@@ -22,8 +22,9 @@ body{
   width: 100%;
   height: 600px;
   /* background-color: hotpink; */
-  background-image: url(/Images/background-main.png);
-  background-size: cover;
+  background-image: url(/Images/background-main-new.png);
+  background-size:contain;
+  background-position: center;
   background-repeat: no-repeat;
 }
 .welcome-text {
