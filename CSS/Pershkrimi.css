@@ -1,0 +1,81 @@
+body{
+    background-image: url(B.jpg);
+    background-size: 100% 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+
+.tabela12 {
+  margin-bottom: 0px; /* Reduce the margin between tabela12 and tabela34 */
+}
+
+.tabela34 {
+  margin-top: -20px; /* Reduce the margin between tabela12 and tabela34 */
+}
+
+/* Adjust the width of the cards to make them wider */
+.tabela12 .card,
+.tabela34 .card {
+  width: 220x; /* Adjust the width as needed */
+  border-radius: 30px;
+  border: none;
+  margin-left: 65px;
+
+}
+
+.card-body{
+    background-color: #021c07;
+    color: aliceblue;
+    border-radius: 0px 0px 30px 30px;
+}
+
+/* Adjust the positioning of tabela34 */
+.tabela34 {
+  margin-left: 0px;
+}
+
+/* Add margin to move the second table in each group more to the right */
+.tabela12 .card:nth-child(2),
+.tabela34 .card:nth-child(2) {
+  margin-left: 20px;
+}
+
+.card {
+  margin-bottom: 10px;
+  margin-top: 10%;
+}
+/* Add margin to move the fourth table to the right */
+.tabela34 .card:nth-child(2),
+.tabela34 .card:nth-child(4) {
+  margin-left: 20px;
+}
+
+/* Optional: Adjust the positioning of tabela12 and tabela34 on smaller screens */
+@media (max-width: 767px) {
+  .tabela12,
+  .tabela34 {
+    margin-left: 0;
+  }
+  .tabela12 .card:nth-child(2),
+  .tabela34 .card:nth-child(2),
+  .tabela34 .card:nth-child(4) {
+    margin-left: 0;
+  }
+}
+
+.btn-primary{
+    background-color: #044210;
+    border: none; 
+    border-radius: 10px;
+
+    
+}
+video{
+    background-color: rgba(2, 8, 0, 0.952);
+    border-radius: 27px 27px 0px 0px;
+}
+
+  
+  
