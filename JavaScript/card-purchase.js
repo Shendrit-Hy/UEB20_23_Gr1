@@ -78,6 +78,83 @@ const items = [
         price: 20.00,
         imagePath: '/Images/plan-1.png'
     },
+    {
+        id: 11,
+        name: '1',
+        type: 'Plan',
+        price: 20.00,
+        imagePath: '/Images/plan-2.png'
+    },
+    {
+        id: 12,
+        name: '1',
+        type: 'Plan',
+        price: 20.00,
+        imagePath: '/Images/plan-3.png'
+    },
+    {
+        id: 13,
+        name: '1',
+        type: 'Plan',
+        price: 20.00,
+        imagePath: '/Images/plan-4.png'
+    },
+    {
+        id: 14,
+        name: '1',
+        type: 'Plan',
+        price: 20.00,
+        imagePath: '/Images/plan-5.png'
+    },
+    {
+        id: 15,
+        name: '1',
+        type: 'Plan',
+        price: 20.00,
+        imagePath: '/Images/plan-6.png'
+    },
+    {
+        id: 16,
+        name: '1',
+        type: 'Plan',
+        price: 20.00,
+        imagePath: '/Images/plan-7.png'
+    },
+    {
+        id: 17,
+        name: '1',
+        type: 'Plan',
+        price: 20.00,
+        imagePath: '/Images/plan-8.png'
+    },
+    {
+        id: 18,
+        name: '1',
+        type: 'Plan',
+        price: 20.00,
+        imagePath: '/Images/plan-9.png'
+    },
+    {
+        id: 19,
+        name: '1',
+        type: 'Plan',
+        price: 20.00,
+        imagePath: '/Images/plan-10.png'
+    },
+    {
+        id: 20,
+        name: '1',
+        type: 'Plan',
+        price: 20.00,
+        imagePath: '/Images/plan-11.png'
+    },
+    {
+        id: 21,
+        name: '1',
+        type: 'Plan',
+        price: 20.00,
+        imagePath: '/Images/plan-12.png'
+    },
     
 ]
 
