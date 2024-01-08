@@ -1,44 +1,115 @@
 let originalPrice = 0;
+let purchases = 1;
 
 var quantity = document.getElementById('item-quantity')
 var itemPrice = document.getElementById('item-price')
 var taxPrice = document.getElementById('tax')
 var totalPrice = document.getElementById('total')
+var productId;
+
+const items = [
+    {
+        id: 1,
+        name: '1',
+        type: 'Supplement',
+        price: 55.00,
+        imagePath: '/Images/item-1.png'
+    },
+    {
+        id: 2,
+        name: '1',
+        type: 'Supplement',
+        price: 60.00,
+        imagePath: '/Images/item-2.png'
+    },
+    {
+        id: 3,
+        name: '1',
+        type: 'Supplement',
+        price: 70.00,
+        imagePath: '/Images/item-3.png'
+    },
+    {
+        id: 4,
+        name: '1',
+        type: 'Supplement',
+        price: 80.00,
+        imagePath: '/Images/item-4.png'
+    },
+    {
+        id: 5,
+        name: '1',
+        type: 'Supplement',
+        price: 30.00,
+        imagePath: '/Images/item-5.png'
+    },
+    {
+        id: 6,
+        name: '1',
+        type: 'Supplement',
+        price: 50.00,
+        imagePath: '/Images/item-6.png'
+    },
+    {
+        id: 7,
+        name: '1',
+        type: 'Supplement',
+        price: 55.00,
+        imagePath: '/Images/item-7.png'
+    },
+    {
+        id: 8,
+        name: '1',
+        type: 'Supplement',
+        price: 55.00,
+        imagePath: '/Images/item-8.png'
+    },
+    {
+        id: 9,
+        name: '1',
+        type: 'Supplement',
+        price: 55.00,
+        imagePath: '/Images/item-9.png'
+    },
+]
 
 
 window.onload = function () {
     var productImageID = document.getElementById('product-image');
     var urlParams = new URLSearchParams(window.location.search);
-    var productId = urlParams.get('product');
+    productId = urlParams.get('product');
+    console.log(productId)
 
-    const productImageMap = {
-        '1':'/Images/item-1.png',
-        '2':'/Images/item-2.png',
-        '3':'/Images/item-3.png',
-        '4':'/Images/item-4.png',
-        '5':'/Images/item-5.png',
-        '6':'/Images/item-6.png',
-        '7':'/Images/item-7.png',
-        '8':'/Images/item-8.png',
-        '9':'/Images/item-9.png'
-    }
+    // const productImageMap = {
+    //     '1':'/Images/item-1.png',
+    //     '2':'/Images/item-2.png',
+    //     '3':'/Images/item-3.png',
+    //     '4':'/Images/item-4.png',
+    //     '5':'/Images/item-5.png',
+    //     '6':'/Images/item-6.png',
+    //     '7':'/Images/item-7.png',
+    //     '8':'/Images/item-8.png',
+    //     '9':'/Images/item-9.png'
+    // }
 
-    const productPriceMap = {
-        '1':55.00,
-        '2':60.00,
-        '3':70.00,
-        '4':80.00,
-        '5':30.00,
-        '6':50.00,
-        '7':55.00,
-        '8':55.00,
-        '9':55.00,
-    }
+    // const productPriceMap = {
+    //     '1':55.00,
+    //     '2':60.00,
+    //     '3':70.00,
+    //     '4':80.00,
+    //     '5':30.00,
+    //     '6':50.00,
+    //     '7':55.00,
+    //     '8':55.00,
+    //     '9':55.00,
+    // }
 
-    originalPrice = productPriceMap[productId];
+    const findItem = items.find(item => item.id === parseInt(productId))
 
-    const productPath = productImageMap[productId];
-    const productPrice = productPriceMap[productId];
+    originalPrice = findItem.price;
+
+    const productPath = findItem.imagePath;
+    const productPrice = findItem.price;
 
     productImageID.src = productPath;
     console.log("Testing...")
@@ -349,8 +420,6 @@ function addQuantity(){
     taxPrice.innerHTML = ((tempPrice/100)*18).toFixed(2)
 
     totalPrice.innerHTML = (parseFloat(taxPrice.innerHTML) + parseFloat(itemPrice.innerHTML)).toFixed(2)
-
-
 }
 
 function subtractQuantity(){
@@ -366,9 +435,48 @@ function subtractQuantity(){
         taxPrice.innerHTML = ((tempPrice/100)*18).toFixed(2)
 
         totalPrice.innerHTML = (parseFloat(taxPrice.innerHTML) + parseFloat(itemPrice.innerHTML)).toFixed(2)
-
     }
-
-
-
 }
+
+document.getElementById("purchase-with-card").addEventListener("submit", function(event) {
+event.preventDefault();
+
+var name = document.getElementById("name").value;
+var address = document.getElementById("address").value;
+
+const findItemPurchased = items.find(item => item.id === parseInt(productId))
+
+const userDetails = {
+    name: name,
+    address: address
+}
+
+const itemDetails = {
+    itemType: findItemPurchased.type,
+    price: findItemPurchased.price,
+    quantity: quantity.innerHTML,
+    totalPrice: totalPrice.innerHTML
+}
+
+const purchaseDetails = {
+    userDetails,
+    itemDetails
+}
+
+let purchase = 'purchase';
+
+
+if (localStorage.getItem('purchase') == null){
+    localStorage.setItem('purchasesCount',purchases)
+    localStorage.setItem('purchase',purchase + purchases)
+}
+else{
+    purchases = parseInt(localStorage.getItem('purchasesCount'))
+    purchases += 1;
+    localStorage.setItem('purchase',purchase + purchases)
+    localStorage.setItem('purchasesCount',purchases)
+}
+
+localStorage.setItem(localStorage.getItem('purchase'), JSON.stringify(purchaseDetails))
+
+});

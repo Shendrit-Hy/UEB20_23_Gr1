@@ -13,7 +13,7 @@ body{
   display: flex;
   flex-flow: row;
   justify-content: space-evenly;
-  margin-bottom: 500px;
+  margin-bottom: 100px;
 }
 
 .item-card{
@@ -22,7 +22,7 @@ body{
   flex-flow: column;
   align-items: center;
   width:400px;
-  height:600px;
+  height:540px;
   padding: 50px;
   background-color: #0f969c;
   border-radius: 20px;
@@ -103,11 +103,16 @@ body{
 }
 
 .submit-button-container{
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
-  width: 50%;
+  width: 100%;
 }
 
 .submit-button{
+  width: 60%;
   border-radius: 30px;
   box-shadow: 0 9px 10px 0 rgba(0,0,0,.5);
   transition: 0.2s;
@@ -122,4 +127,12 @@ body{
   transition: 0.2s;
 }
 
+.securitycode, .expirationdate{
+  width: 48.15%;
+  display: inline-block;
+}
+
+.expirationdate{
+  margin-right: 10px;
+}
 

@@ -56,9 +56,11 @@
             <hr class="horizontal-line">
             <pre class="price-container total">Total Price :         <div id="total">0.00</div> &euro;</pre>
         </div>
-        <div class="submit-button-container">
-            <input type="submit" class="submit-button" value="Purchase">
-        </div>
+        <!-- <div class="submit-button-container">
+            <form id="purchase-with-card">
+                <input type="submit" value="submit" class="submit-button">
+            </form>
+        </div> -->
     </div>
     <div class="pay">
       <div class="container-card preload">
@@ -160,29 +162,34 @@
           </div>
       </div>
       <div class="form-container">
-          <div class="field-container">
-              <label for="name">Name</label>
-              <input id="name" maxlength="20" type="text">
-          </div>
-          <div class="field-container">
-            <label for="address">Address</label>
-            <input id="address" maxlength="20" type="text">
-        </div>
-          <div class="field-container">
-              <label for="cardnumber">Card Number</label><span id="generatecard">generate random</span>
-              <input id="cardnumber" type="text" pattern="[0-9]*" inputmode="numeric">
-              <svg id="ccicon" class="ccicon" width="750" height="471" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink">
-              </svg>
-          </div>
-          <div class="field-container">
-              <label for="expirationdate">Expiration (mm/yy)</label>
-              <input id="expirationdate" type="text" pattern="[0-9]*" inputmode="numeric">
-          </div>
-          <div class="field-container">
-              <label for="securitycode">Security Code</label>
-              <input id="securitycode" type="text" pattern="[0-9]*" inputmode="numeric">
-          </div>
+        <form id="purchase-with-card">
+            <div class="field-container">
+                <label for="name">Name</label>
+                <input id="name" maxlength="20" type="text" required>
+            </div>
+            <div class="field-container">
+                <label for="address">Address</label>
+                <input id="address" maxlength="50" type="text" required>
+            </div>
+            <div class="field-container">
+                <label for="cardnumber">Card Number</label><span id="generatecard">generate random</span>
+                <input id="cardnumber" type="text" inputmode="numeric" required>
+                <svg id="ccicon" class="ccicon" width="750" height="471" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                </svg>
+            </div>
+            <div class="field-container expirationdate">
+                <label for="expirationdate">Expiration (mm/yy)</label>
+                <input id="expirationdate" type="text" inputmode="numeric" required>
+            </div>
+            <div class="field-container securitycode">
+                    <label for="securitycode">Security Code</label>
+                    <input id="securitycode" type="text" inputmode="numeric" required>
+            </div>
+            <div class="submit-button-container">
+                <input type="submit" value="Purchase" class="submit-button">
+            </div>
+        </form>
       </div>
     </div>
   </div>
