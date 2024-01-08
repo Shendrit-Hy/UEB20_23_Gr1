@@ -56,11 +56,11 @@ nav .start-home, a:nth-child(1):hover~.animation{
 }
 
 nav a:nth-child(2){
-  width: 110px;
+  width: 160px;
 }
 
 nav a:nth-child(2):hover~.animation{
-  width: 110px;
+  width: 160px;
   left:100px
 }
 
@@ -70,16 +70,16 @@ nav a:nth-child(3){
 
 nav a:nth-child(3):hover~.animation{
   width: 100px;
-  left: 210px;
+  left: 260px;
 }
 
 nav a:nth-child(4){
-  width: 160px;
+  width: 110px;
 }
 
 nav a:nth-child(4):hover~.animation{
-  width: 160px;
-  left: 310px;
+  width: 110px;
+  left: 360px;
 }
 
 nav a:nth-child(5){

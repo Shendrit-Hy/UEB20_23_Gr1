@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="icon" href="/Images/logo-transparent.png">
     <link rel="stylesheet" href="/CSS/stylehome.css">
     <link rel="stylesheet" href="/CSS/navbar.css">
     <link rel="stylesheet" href="/CSS/signup-login.css">
@@ -22,16 +23,16 @@
       <img src="/Images/logo5.png" alt="logo" width="100px" height="100px">
     </div>
     <nav class="">
-      <a href="#">Home</a>
-      <a href="#">Supplements</a>
-      <a href="#">BMI</a>
+      <a href="/HTML/home.html">Home</a>
+      <a href="/HTML/supplements.html">Supplements</a>
+      <a href="/HTML/BMI.html">BMI</a>
       <a href="#">About</a>
-      <a href="#">Contact</a>
+      <a href="/HTML/Contact.html">Contact</a>
       <div class="animation start-home"></div>
     </nav>
     <div class="signup-login">
-        <a href="#" class="signup"> Sign Up </a>
-        <a href="#" class="login"> Log In </a>
+        <a href="/HTML/SignUp.html" class="signup"> Sign Up </a>
+        <a href="/HTML/SignUp.html" class="login"> Log In </a>
     </div>
   </div>
     <div class="container">
@@ -58,7 +59,7 @@
                 <p class="medium-title medium-title-third">JOIN OUR COMMUNITY</p>
                 <P class="main-third-box-text">We have reached 50k+ <br>members around the world. <br>
                 Become our newest member <br> and start the journey of your life</P>
-                <button class="button main-third-btn">JOIN US NOW</button>
+                <button class="button main-third-btn" onclick="openSignIn(); return false">JOIN US NOW</button>
             </div>
             <div class="main-third-box2">
                 <div class="main-third-box-row">
@@ -82,7 +83,7 @@
                         about your training nutrition <br>
                         and suplements through your <br>
                          phone or laptop from anywhere</P>
-                    <button class="button main-fourth-btn">START WORKING OUT</button></div>
+                    <button class="button main-fourth-btn" onclick="openAbonimi(); return false">START WORKING OUT</button></div>
                 <div class="main-fourth-box2">
                     <img class="main-fourth-photo" src="/Images/fourth-box-1.png" alt="">
                 </div>
@@ -168,6 +169,14 @@
       </footer>
       <script>
         function redirect(){
+          window.location.href = 'abonimi.html'
+        }
+
+        function openSignIn(){
+          window.location.href = 'SignUp.html'
+        }
+
+        function openAbonimi(){
           window.location.href = 'abonimi.html'
         }
       </script>
