@@ -479,4 +479,6 @@ else{
 
 localStorage.setItem(localStorage.getItem('purchase'), JSON.stringify(purchaseDetails))
 
+window.location.href = 'Succesful-purchase.html'
+
 });
