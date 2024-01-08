@@ -71,6 +71,14 @@ const items = [
         price: 55.00,
         imagePath: '/Images/item-9.png'
     },
+    {
+        id: 10,
+        name: '1',
+        type: 'Plan',
+        price: 20.00,
+        imagePath: '/Images/plan-1.png'
+    },
+    
 ]
 
 

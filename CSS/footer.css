@@ -41,6 +41,14 @@ footer article button {
   font-family: inherit;
   font-size: 16px;
   box-shadow: 0 3px 4px 0 rgba(0,0,0,.5);
+  transition: 0.2s;
+}
+
+footer article button:hover{
+  cursor:pointer;
+  background-color: #052529;
+  color: white;
+  transition: 0.2s;
 }
 
 footer section {
@@ -129,4 +137,10 @@ section.bottom {
 
 /* Adjust other styles as needed */
 /* ... */
+
+/* .footer-button:hover{
+  background-color: red;
+  cursor: pointer;
+  color: white;
+} */
 
