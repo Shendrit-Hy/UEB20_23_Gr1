@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Get all elements with the class "pricing-card"
     const pricingCards = document.querySelectorAll('.pricing-card');
+    const orderButton = document.querySelectorAll('order-btn')
 
     // Define prices for each table
     const prices = [
