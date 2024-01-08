@@ -37,6 +37,10 @@ nav a{
   text-align: center;
 }
 
+#nav-a{
+  font-weight: bold;
+}
+
 nav .animation{
   position: absolute;
   height: 100%;

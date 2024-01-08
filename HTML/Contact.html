@@ -37,18 +37,22 @@
         font-style: italic;
     }
     #numri-telefonit{
-        margin-top: -20px;
+        margin-top: -10px;
         font-size: 17px;
         font-style: normal; 
     }
     #emaili{
-        margin-top: -20px;
+        margin-top: -10px;
         font-size: 17px;
         font-style: normal;
     }
 
     footer{
       margin-top: 70px;
+    }
+
+    mark{
+      background-color: rgba(255, 255, 255, 0.7);
     }
 
 </style>
@@ -62,7 +66,7 @@
       <a href="/HTML/supplements.html">Supplements</a>
       <a href="/HTML/BMI.html">BMI</a>
       <a href="#">About</a>
-      <a href="/HTML/Contact.html">Contact</a>
+      <a href="/HTML/Contact.html" id="nav-a">Contact</a>
       <div class="animation start-home"></div>
     </nav>
     <div class="signup-login">
@@ -78,9 +82,9 @@
           <!-- <img class="img-fluid rounded" loading="lazy" src="C.jpg" alt="Get in Touch"> -->
             <p>We appreciate your interest and are excited to hear from you. Whether you have a question, want to discuss a potential project, or just say hello, feel free to reach out to us using the contact form below. </p>
                 <p >For more questions contact in our number:</p>
-                <p id="numri-telefonit">044-123-456.</p>
+                <p id="numri-telefonit"><mark><u>044-123-456.</u></mark></p>
                 <p>For more questions contact in our email:</p>
-                <p id="emaili">supernova@gmail.com</p>
+                <p id="emaili"><mark>supernova@gmail.com</mark></p>
                 <p>If you need any advice or help, come visit us at: </p>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1593.90030626569!2d21.14005713552557!3d42.65187691058103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1704725613390!5m2!1sen!2s" width="250" height="200" frameborder="0" style="border:3px solid black;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         </div>
@@ -156,19 +160,19 @@
           <h3>Social Networks</h3>
           <div class="social-icons">
             <img src="/Images/instagram-logo.png" alt="Instagram Logo" />
-            <a>Instagram</a>
+            <a href="https://www.instagram.com/"  target="_blank">Instagram</a>
           </div>
           <div class="social-icons">
             <img src="/Images/youtube-logo.png" alt="Youtube Logo" />
-            <a>Youtube</a>
+            <a href="https://www.youtube.com/"  target="_blank">Youtube</a>
           </div>
           <div class="social-icons">
             <img src="/Images/twitter-logo.png" alt="Twitter Logo" />
-            <a>Twitter</a>
+            <a href="https://twitter.com/"  target="_blank">Twitter</a>
           </div>
           <div class="social-icons">
             <img src="/Images/facebook-logo.png" alt="Facebook Logo" />
-            <a>Facebook</a>
+            <a href="https://www.facebook.com/"  target="_blank">Facebook</a>
           </div>
         </li>
         <li>
@@ -190,7 +194,7 @@
           <h3>Company</h3>
           <a>supernova@gmail.com</a>
           <a>Kosovë, Prishtinë</a>
-          <a>Adress Deshmoret e Kombit nr 9</a>
+          <a><address>Adresa: Deshmoret e Kombit nr 9</address></a>
           <a>+38344123456</a>
         </li>
       </ul>
