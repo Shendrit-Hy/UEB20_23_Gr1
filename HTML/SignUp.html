@@ -67,17 +67,19 @@
     function signUp() {
       const signupEmailInput = document.getElementById('email-signup');
       const signupPasswordInput = document.getElementById('password-signup');
+      const nameInput = document.getElementById('name-signup')
 
       const email = signupEmailInput.value;
       const password = signupPasswordInput.value;
+      const name = nameInput.value
 
       if (email && password) {
         const userData = { email, password };
         localStorage.setItem('userData', JSON.stringify(userData));
         localStorage.setItem('logged',true)
+        localStorage.setItem('userName',name)
 
         console.log('User signed up successfully:', userData);
-        checkIfSignedIn(); // Check if the user is signed in after signing up
         window.location.href = 'home.html'
       } else {
         console.log('Please enter both username and password.');

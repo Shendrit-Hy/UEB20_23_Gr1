@@ -14,6 +14,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
+  <script src="/JavaScript/check-if-signed-in.js"></script>
   <style>
     @font-face {
         font-family: 'Pre-Font';
@@ -41,9 +42,17 @@
           <a href="/HTML/Contact.html">Contact</a>
           <div class="animation start-home"></div>
         </nav>
-        <div class="signup-login">
+        <div class="signup-login" id="signup-and-login" style="display: none;">
             <a href="/HTML/SignUp.html" class="signup"> Sign Up </a>
             <a href="/HTML/SignUp.html" class="login"> Log In </a>
+        </div>
+        <div class="logout" id="logout">
+          <p id="name-of-user"></p>
+          <button id="logout-button" onclick="signOut(); return false">
+            <span class="material-symbols-outlined">
+              logout
+            </span>
+          </button>
         </div>
       </div>
   <div class="container">
@@ -230,10 +239,10 @@
         </li>
         <li>
           <h3>Shop</h3>
-          <a href="/HTML/abonimi.html">1 Month Plan</a>
-          <a href="/HTML/abonimi.html">6 Month Plan</a>
-          <a href="/HTML/abonimi.html">1 Year Plan</a>
-          <a href="/HTML/supplements.html">Supplements</a>
+          <a onclick="redirect()" class="underline-hover">1 Month Plan</a>
+          <a onclick="redirect()" class="underline-hover">6 Month Plan</a>
+          <a onclick="redirect()"class="underline-hover">1 Year Plan</a>
+          <a onclick="supplement()" class="underline-hover">Supplements</a>
         </li>
         <li>
           <h3>Navigate</h3>
@@ -259,6 +268,8 @@
     function redirect(){
         window.location.href = 'abonimi.html'
     }
+
+    ifLogIn()
   </script>
 </body>
 </html>

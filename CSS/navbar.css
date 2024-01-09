@@ -7,6 +7,7 @@ body{
 .logout{
   display: flex;
   flex-flow: row;
+  align-items: center;
   color: white;
   font-weight: bold;
   margin-left: -10%;
@@ -14,8 +15,9 @@ body{
 
 #logout-button{
   margin-left: 10px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0;
   border-radius: 10px;
   border: none;
 }

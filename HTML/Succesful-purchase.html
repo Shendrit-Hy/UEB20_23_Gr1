@@ -12,6 +12,7 @@
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=GFS Neohellenic' rel='stylesheet'>
     <link rel="icon" href="/Images/logo-transparent.png">
+    <script src="/JavaScript/check-if-signed-in.js"></script>
 </head>
 <body>
     
@@ -27,9 +28,17 @@
           <a href="/HTML/Contact.html">Contact</a>
           <div class="animation start-home"></div>
         </nav>
-        <div class="signup-login">
+        <div class="signup-login" id="signup-and-login">
             <a href="/HTML/SignUp.html" class="signup"> Sign Up </a>
             <a href="/HTML/SignUp.html" class="login"> Log In </a>
+        </div>
+        <div class="logout" id="logout" style="display: none;">
+          <p id="name-of-user"></p>
+          <button id="logout-button" onclick="signOut(); return false">
+            <span class="material-symbols-outlined">
+              logout
+            </span>
+          </button>
         </div>
       </div>
     <div class="container">
@@ -47,6 +56,10 @@
         </div>
 
     </div>
+
+    <script>
+        ifLogIn()
+    </script>
     
 </body>
 </html>

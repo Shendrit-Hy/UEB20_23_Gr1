@@ -4,6 +4,32 @@ body{
   overflow-x: hidden;
 }
 
+.logout{
+  display: flex;
+  flex-flow: row;
+  color: white;
+  align-items: center;
+  font-weight: bold;
+  margin-left: -10%;
+}
+
+#name-of-user{
+  margin-top: 20px;
+}
+
+#logout-button{
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+}
+
+#logout-button:hover{
+  background-color: #0F969C;
+  cursor: pointer;
+}
+
 .nav-container {
   padding-right: 120px;
   display: flex;

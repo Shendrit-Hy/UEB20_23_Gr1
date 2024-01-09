@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/CSS/signup-login-bootstrap.css">
     <link rel="stylesheet" href="/CSS/scrollbar.css">
     <link rel="stylesheet" href="/CSS/footer.css">
+    <script src="/JavaScript/check-if-signed-in.js"></script>
     
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/contacts/contact-4/assets/css/contact-4.css">
@@ -69,10 +70,18 @@
       <a href="/HTML/Contact.html" id="nav-a">Contact</a>
       <div class="animation start-home"></div>
     </nav>
-    <div class="signup-login">
-        <a href="/HTML/SignUp.html" class="signup"> Sign Up </a>
-        <a href="/HTML/SignUp.html" class="login"> Log In </a>
-    </div>
+    <div class="signup-login" id="signup-and-login">
+      <a href="/HTML/SignUp.html" class="signup"> Sign Up </a>
+      <a href="/HTML/SignUp.html" class="login"> Log In </a>
+  </div>
+  <div class="logout" id="logout" style="display: none;">
+    <p id="name-of-user"></p>
+    <button id="logout-button" onclick="signOut(); return false">
+      <span class="material-symbols-outlined">
+        logout
+      </span>
+    </button>
+  </div>
   </div>
 <section class="bg-light py-3 py-md-5">
     <div class="container">
@@ -177,10 +186,10 @@
         </li>
         <li>
           <h3>Shop</h3>
-          <a href="/HTML/abonimi.html">1 Month Plan</a>
-          <a href="/HTML/abonimi.html">6 Month Plan</a>
-          <a href="/HTML/abonimi.html">1 Year Plan</a>
-          <a href="/HTML/supplements.html">Supplements</a>
+          <a onclick="redirect()" class="underline-hover">1 Month Plan</a>
+          <a onclick="redirect()" class="underline-hover">6 Month Plan</a>
+          <a onclick="redirect()"class="underline-hover">1 Year Plan</a>
+          <a onclick="supplement()" class="underline-hover">Supplements</a>
         </li>
         <li>
           <h3>Navigate</h3>
@@ -202,9 +211,16 @@
     <section class="bottom">© 2023 Super Nova</section>
   </footer>
   <script>
-    function redirect(){
-      window.location.href = 'abonimi.html'
+        function redirect(){
+      if(localStorage.getItem('logged')){
+          window.location.href = 'abonimi.html'
+      }
+      else{
+          window.location.href = 'SignUp.html'
+      }       
     }
+
+    ifLogIn()
   </script>
 </body>
 </html>
