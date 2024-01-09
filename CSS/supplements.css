@@ -9,6 +9,9 @@ body{
 
 .container{
   width: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .main-title {
@@ -46,7 +49,7 @@ body{
 .big-card-container {
   border-radius: 30px;
   background: #303134;
-  width: 100%;
+  width: 92%;
   height: 550px;
   display: flex;
   align-items: center;

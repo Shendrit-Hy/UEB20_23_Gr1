@@ -12,11 +12,12 @@ body{
   width: 90%;
   display: flex;
   flex-flow: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin-bottom: 100px;
 }
 
 .item-card{
+  margin-top: 20px;
   text-align: center;
   display: flex;
   flex-flow: column;
