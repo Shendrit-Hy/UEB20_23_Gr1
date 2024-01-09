@@ -17,7 +17,6 @@
       color: white;
       background-color: #202124;
     }
-
     nav a:hover{
       font-size: 15px;
       text-transform: uppercase;
@@ -29,11 +28,13 @@
       display: inline-block;
       text-align: center;
     }
-
     .container{
-      width: 90%;
+      width: 100%;
     }
-
+    .container1{
+      width: 100%;
+      height: 500px;
+    }
     #bmi-calculator{
       padding-bottom:30px;
       background-image: url(/Images/fotoBMI.png);
@@ -41,7 +42,6 @@
       box-shadow: 0 12px 15px 0 rgba(0,0,0,.5);
       border: 6px solid #202124;
     }
-
     .form-control, .custom-select, #submit{
       text-align: center;
       width: 300px;
@@ -49,87 +49,74 @@
       border: 2px solid #0F969C;
       background-color: white;
     }
-
     .form-control:focus, .custom-select:focus{
       box-shadow: none;
     }
-
     #submit{
       background-color:#0F969C;
       border: none;
     }
-
     #submit:hover{
       background-color: #05616A;
     }
-
     .custom-table {
       border-collapse: separate;
       width: 100%;
-      border-radius: 50px;
+      border-radius: 30px;
       border: 2px solid #0F969C;
       background-color: #303134;
       overflow: hidden;
       box-shadow: 0 9px 10px 0 rgba(0,0,0,.5);
     }
-
     .custom-table th, .custom-table td {
       padding: 8px;
       text-align: center;
     }
-
     .right-border{
       border-right: 1px solid white;
     }
-
     .table .thead-dark th{
       background-color:#0F969C;
       border-bottom:none;
       border-top: none;
     }
-
     .mt-6 {margin-top: 60px;}
     .mt-7 {margin-top: 70px;}
     .mb-6 {margin-bottom: 60px;}
     .mb-7 {margin-bottom: 70px;}
-
     #disclaimer{
-      height: 400px;
+      width: 100%;
+      height: 450px;
       background-image: url(/Images/disclaimer.png);
       background-size: cover;
       box-shadow: 0 9px 10px 0 rgba(0,0,0,.5);
     }
-
     #content{
       padding: 100px;
       height: inherit;
     }
-
     #content h1{
       color: #0F969C;
+      font-size: 64px;
+      margin-bottom: 25px;
     }
-
     #content p{
       color: white
     }
-
     footer button p{
       margin:0;
       padding: 16px;
     }
-
     #BMI-div{
       background-color: rgba(255, 255, 255, 0.2);
       border-radius: 20px;
     }
-
     #BMI-div a{
       text-decoration: underline;
       text-transform: uppercase;
       color: white;
       font-weight: bold;
     }
-
   </style>
   <link rel="stylesheet" href="/CSS/navbar-bootstrap.css">
   <link rel="stylesheet" href="/CSS/signup-login-bootstrap.css">
@@ -156,7 +143,7 @@
     </div>
   </div>
   <div class="container">
-    <div class="container mt-5 mb-7"  id="bmi-calculator">
+    <div class="container1 mt-5 mb-7"  id="bmi-calculator">
       <div class="container">
         <div class="page-header text-center mb-5"> 
           <h1>CALCULATE YOUR BMI</h1>
@@ -254,7 +241,7 @@
               <td>100</td>
             </tr>
             <tr>
-              <th scope="row" class="right-border">Bulk (Increase)</th>
+              <th scope="row" class="right-border">Lean Bulk</th>
               <td class="right-border">2800</td>
               <td class="right-border">220</td>
               <td class="right-border">300</td>
@@ -262,7 +249,7 @@
               <td>120</td>
             </tr>
             <tr>
-              <th scope="row" class="right-border">Bulk (Intense)</th>
+              <th scope="row" class="right-border">Dirty Bulk</th>
               <td class="right-border">3200</td>
               <td class="right-border">250</td>
               <td class="right-border">350</td>
