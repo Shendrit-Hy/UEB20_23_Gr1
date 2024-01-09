@@ -4,6 +4,28 @@ body{
   overflow-x: hidden;
 }
 
+.logout{
+  display: flex;
+  flex-flow: row;
+  color: white;
+  font-weight: bold;
+  margin-left: -10%;
+}
+
+#logout-button{
+  margin-left: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+}
+
+#logout-button:hover{
+  background-color: #0F969C;
+  cursor: pointer;
+}
+
+
 .nav-container {
   padding-right: 120px;
   display: flex;

@@ -108,6 +108,11 @@ section.top ul li a {
   display: block;
   margin-bottom: 25px;
   color: rgb(255 255 255 / 90%);
+  text-decoration: none;
+}
+
+section.top ul li a:hover {
+  text-decoration: underline;
 }
 
 section.top h3 {
