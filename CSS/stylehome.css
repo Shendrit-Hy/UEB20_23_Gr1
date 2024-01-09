@@ -157,7 +157,7 @@ body{
   width: 100%;
   height: 400px;
   /* background-color: lime; */
-  margin-top: 120px;
+  margin-top: 100px;
   display: flex;
   justify-content: space-around;
 }
