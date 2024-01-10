@@ -564,6 +564,12 @@ else{
 
 localStorage.setItem(localStorage.getItem('purchase'), JSON.stringify(purchaseDetails))
 
+console.log("verifikimi")
+setTimeout(function(){
+  console.log("2")
+},2000);
+console.log('asdf')
+
 window.location.href = 'Succesful-purchase.html'
 
 });
