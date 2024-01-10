@@ -75,7 +75,7 @@
           </li>
        </ol>
        Për arsye se ne nuk kemi mundur që ti përfshijmë të gjitha kërkesat brenda faqeve kryesore kemi vendosur që në këtë faqe t'i vendosim pjesën e mbetur. 
-      <br>Përdorimi i disa shkonjave si ( &#231;, &euml;, &#xc7, &#203; ) ka qenë i pamundur për faktin se website-i është në gjuhën angleze. 
+      <br>Përdorimi i disa shkonjave si ( &#231;, &euml;, &#xc7;, &#203; ) ka qenë i pamundur për faktin se website-i është në gjuhën angleze. 
       </p>
       
     </section>
@@ -135,11 +135,55 @@
         <div class="test-photos-left"><p>Here we used the border-image</p></div>
         <div class="test-photos-right"></div>
     </section>
-
+    <section class="test-audio">
+      <h1>Audio Examples</h1>
+      <div>
+        <audio controls>
+          <source src="/Audio/NO EXCUSES - Best Motivational Video.mp3" type="audio/mp3">
+          Your browser does not support the audio tag.
+        </audio>
+        <audio controls>
+          <source src="/Audio/FEARS - Motivational Workout Video HD.mp3" type="audio/mp3">
+          Your browser does not support the audio tag.
+        </audio>
+      </div>
+    </section>
+    <section class="test-forms">
+      <div class="test-forms-left">
+        <h1>Datalist</h1>
+        <form>
+          <label for="antari">Zgjedh antarin e preferuar te grupit: </label>
+          <input list="antaret" name="antari" id="antari">
+          <datalist id="antaret">
+            <option value="Yll Kosumi">
+            <option value="Yll Jupolli">
+            <option value="Yll Pllana">
+            <option value="Shëndrit Hyseni">
+            <option value="Valdet Nurkasa">
+          </datalist>
+          <input type="submit">
+        </form>
+      </div>
+      <div class="test-forms-middle">
+        <h1>Elementi keygen nuk preferohet fare per perdorim ne baze te standarteve te reja te HTML5</h1>
+        <form>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required> <br>
+          <label for="keypair">&#xc7;elsi (Key)</label>
+          <keygen id="keypair" name="keypair" keytype="rsa" challenge="random_challenge" required> <br>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+      <div class="test-forms-right">
+        <h1>Output elementi</h1>
+        <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+        <input type="number" id="a" value="50"> + <input type="number" id="b" value="25"> = <output name="x" for="a b"></output>
+        </form>
+      </div>
+    </section>
   </div>
 
   <script>
-
     $(document).ready(function() {
       $('.container').fadeTo("2000",1);});
     ifLogIn();
