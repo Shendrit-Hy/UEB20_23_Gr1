@@ -93,3 +93,41 @@ body{
   background:rgb(39, 68, 255) url(/Images/About-3.jpg) no-repeat center; 
   background-size: cover;
 }
+.test-audio{
+  margin-top: 50px;
+  width: 90%;
+  /* background-color: red; */
+  border: 2px solid #0f969c;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom:100px;
+}
+.test-forms{
+  margin-top: 50px;
+  width: 90%;
+  /* background-color: red; */
+  border: 2px solid #0f969c;
+  height:350px;
+  margin-bottom:100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.test-forms-left{
+  width: 33%;
+  height: 100%;
+  background-color: limegreen;
+}
+.test-forms-middle{
+  width: 33%;
+  height: 100%;
+  background-color: red;
+}
+.test-forms-right{
+  width: 33%;
+  height: 100%;
+  background-color: aqua;
+}
