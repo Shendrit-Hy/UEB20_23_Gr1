@@ -373,6 +373,13 @@
     var weight = document.bmi.weightInput
     var p = document.getElementById("whatIsYourBMI")
 
+    var maxNumber = Number.MAX_VALUE;
+    console.log('Vlera me e madhe e mundshme:', maxNumber);
+
+    var num2 = Number.NaN;
+    console.log('Vlera NaN (Not a Number):', num2);
+
+
     var myLink = document.createElement("a");
     myLink.href = "#";
     myLink.textContent = "Here";
@@ -403,6 +410,9 @@
         myLink.textContent = "Obesity"
         p.appendChild(myLink)
       }
+
+      var exponentialString = parseInt(height.value).toExponential();
+      console.log('Gjatesia ne shkencor:', exponentialString);
     }
 
     function supplement(){

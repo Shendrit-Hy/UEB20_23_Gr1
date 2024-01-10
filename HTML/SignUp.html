@@ -76,19 +76,30 @@
             
             const email = signupEmailInput.value;
             const password = signupPasswordInput.value;
-            const name = nameInput.value;
+            var name = nameInput.value;
+
+            var temp = name;
+            name = temp.replace("!","")
 
             if (email && password.length >= 8 && isValidEmail(email)) {
                 const userData = { email, password };
                 localStorage.setItem('userData', JSON.stringify(userData));
                 localStorage.setItem('logged', true);
                 localStorage.setItem('userName', name);
+                var logData = new Date()
+                localStorage.setItem('userLoggedData',logData)
 
                 console.log('User signed up successfully:', userData);
                 window.location.href = 'home.html';
             } else {
                 alert('Invalid email, password, or name.');
             }
+            
+            var text = JSON.stringify(email)
+            var pattern = /gmail/g
+
+            var matches = email.match(pattern)
+            console.log(matches)
         }
 
         function signIn() {
@@ -114,14 +125,18 @@
             } else {
                 alert('No signed in user');
             }
+
+            var text = JSON.stringify(email)
+            var pattern = /gmail/g
+
+            var matches = email.match(pattern)
+            console.log(matches)
         }
 
         function isValidEmail(email) {
             var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailPattern.test(email);
         }
-    </script>
-    <script  src="/JavaScript/SignUp_script.js"></script>
     </script>
     <script  src="/JavaScript/SignUp_script.js"></script>
     </body>

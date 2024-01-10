@@ -212,6 +212,23 @@
         <section class="bottom">© 2023 Super Nova</section>
       </footer>
       <script>
+
+        var visitStartTime = new Date();
+        var visitDurationInMinutes = 10;
+
+        function checkVisitTime() {
+          var currentTime = new Date();
+          var elapsedTimeInMinutes = (currentTime - visitStartTime) / (1000 * 60);
+
+          if (elapsedTimeInMinutes >= visitDurationInMinutes) {
+            console.log("Vizita ka perfunduar!");
+          } else {
+            console.log("Vizita vazhdon. Koha e kaluar:", elapsedTimeInMinutes.toFixed(2), "minuta");
+          }
+        }
+
+        setInterval(checkVisitTime, 1000);
+
         function redirect(){
           if(localStorage.getItem('logged')){
             window.location.href = 'abonimi.html'
