@@ -17,13 +17,13 @@
         
                     <span>Or use your Email for registration</span>
                     <label>
-                        <input type="text" id="name-signup" placeholder="Name" required/>
+                        <input  autocomplete="name" type="text" id="name-signup" placeholder="Name" required/>
                     </label>
                     <label>
-                        <input type="email" id="email-signup" placeholder="Email" required/>
+                        <input autocomplete="email" type="email" id="email-signup" placeholder="Email" required/>
                     </label>
                     <label>
-                        <input type="password" id="password-signup" placeholder="Password" required/>
+                        <input autocomplete="password" type="password" id="password-signup" placeholder="Password" required/>
                     </label>
                     <input type="submit" value="Sign Up" class="submit-button" style="margin-top: 9px; color: white;" onclick="signUp();return false">
                     <!-- <button style="margin-top: 9px; color: white;">Sign Up</button> -->
@@ -35,12 +35,12 @@
                     <br>
                     <span > Or sign in using E-Mail Address</span>
                     <label>
-                        <input type="email" id="email-signin" placeholder="Email" required/>
+                        <input autocomplete="email" type="email" id="email-signin" placeholder="Email" required/>
                     </label>
                     <label>
-                        <input type="password" id="password-signin" placeholder="Password" required/>
+                        <input autocomplete="password" type="password" id="password-signin" placeholder="Password" required/>
                     </label>
-                    <a href="#">Forgot your password?</a>
+                   
                     <input type="submit" value="Sign In" class="submit-button" style="color: white;" onclick="signIn();return false">
                     <!-- <button style="color: white;" onclick="SignIn(); return false">Sign In</button> -->
                 </form>
