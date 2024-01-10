@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/CSS/SignUp_style.css">
     <link rel="icon" href="/Images/logo-transparent.png">
     <script src="/JavaScript/check-if-signed-in.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <section>
@@ -23,7 +24,7 @@
                         <input autocomplete="email" type="email" id="email-signup" placeholder="Email" required/>
                     </label>
                     <label>
-                        <input autocomplete="password" type="password" id="password-signup" placeholder="Password" required/>
+                        <input autocomplete="password" type="password" id="password-signup" placeholder="Password" minlength="8" required/>
                     </label>
                     <input type="submit" value="Sign Up" class="submit-button" style="margin-top: 9px; color: white;" onclick="signUp();return false">
                     <!-- <button style="margin-top: 9px; color: white;">Sign Up</button> -->
@@ -38,8 +39,11 @@
                         <input autocomplete="email" type="email" id="email-signin" placeholder="Email" required/>
                     </label>
                     <label>
-                        <input autocomplete="password" type="password" id="password-signin" placeholder="Password" required/>
+                        <input autocomplete="password" type="password" id="password-signin" placeholder="Password" minlength="8" required/>
                     </label>
+                    <p style="padding: 0;margin: 0;" id="frgpass">
+                        Incorrect password
+                    </p>
                    
                     <input type="submit" value="Sign In" class="submit-button" style="color: white;" onclick="signIn();return false">
                     <!-- <button style="color: white;" onclick="SignIn(); return false">Sign In</button> -->
@@ -63,11 +67,14 @@
         </div>
     </section>
     <script>
+
+    $("#frgpass").hide();
+
     function signUp() {
       const signupEmailInput = document.getElementById('email-signup');
       const signupPasswordInput = document.getElementById('password-signup');
-      const nameInput = document.getElementById('name-signup')
-
+      const nameInput = document.getElementById('name-signup');
+      
       const email = signupEmailInput.value;
       const password = signupPasswordInput.value;
       const name = nameInput.value
@@ -104,6 +111,7 @@
           localStorage.setItem('logged',true)
           window.location.href = 'home.html'
         } else {
+            $("#frgpass").show();
           console.log('Invalid email or password.');
         }
       } else {

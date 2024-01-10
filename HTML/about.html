@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="/CSS/scrollbar.css">
   <link rel="stylesheet" href="/CSS/about.css">
   <script src="/JavaScript/check-if-signed-in.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <style>
     table, th, td {
       border: 1px solid #0f969c;
@@ -19,6 +20,9 @@
     }
     th, td {
       padding: 15px;
+    }
+    .container{
+      opacity: 0;
     }
   </style>
 </head>
@@ -71,7 +75,7 @@
           </li>
        </ol>
        Për arsye se ne nuk kemi mundur që ti përfshijmë të gjitha kërkesat brenda faqeve kryesore kemi vendosur që në këtë faqe t'i vendosim pjesën e mbetur. 
-   <br>Përdorimi i disa shkonjave si ( &#231;, &euml;, &#xc7, &#203; ) ka qenë i pamundur për faktin se website-i është në gjuhën angleze. 
+      <br>Përdorimi i disa shkonjave si ( &#231;, &euml;, &#xc7, &#203; ) ka qenë i pamundur për faktin se website-i është në gjuhën angleze. 
       </p>
       
     </section>
@@ -135,6 +139,9 @@
   </div>
 
   <script>
+
+    $(document).ready(function() {
+      $('.container').fadeTo("2000",1);});
     ifLogIn();
   </script>
   

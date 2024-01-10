@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/CSS/scrollbar.css">
     <link rel="stylesheet" href="/CSS/footer.css">
     <script src="/JavaScript/check-if-signed-in.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/contacts/contact-4/assets/css/contact-4.css">
@@ -54,6 +55,9 @@
 
     mark{
       background-color: rgba(255, 255, 255, 0.7);
+    }
+    .container{
+      opacity: 0;
     }
 
 </style>
@@ -211,6 +215,11 @@
     <section class="bottom">© 2023 Super Nova</section>
   </footer>
   <script>
+
+    $(document).ready(function(){
+      $('.container').fadeTo("2000",1);
+    })
+
         function redirect(){
       if(localStorage.getItem('logged')){
           window.location.href = 'abonimi.html'
