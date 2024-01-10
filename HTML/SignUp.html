@@ -18,15 +18,15 @@
         
                     <span>Or use your Email for registration</span>
                     <label>
-                        <input  autocomplete="name" type="text" id="name-signup" placeholder="Name" required/>
+                        <input  autocomplete="name" type="text" id="name-signup" placeholder="Name" required autofocus maxlength="20"/>
                     </label>
                     <label>
-                        <input autocomplete="email" type="email" id="email-signup" placeholder="Email" required/>
+                        <input autocomplete="email" type="email" id="email-signup" placeholder="Email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/>
                     </label>
                     <label>
                         <input autocomplete="password" type="password" id="password-signup" placeholder="Password" minlength="8" required/>
                     </label>
-                    <input type="submit" value="Sign Up" class="submit-button" style="margin-top: 9px; color: white;" onclick="signUp();return false">
+                    <input id="sign-up-btn" type="submit" value="Sign Up" class="submit-button" style="margin-top: 9px; color: white;" onclick="signUp();return false">
                     <!-- <button style="margin-top: 9px; color: white;">Sign Up</button> -->
                 </form>
             </div>
@@ -36,16 +36,16 @@
                     <br>
                     <span > Or sign in using E-Mail Address</span>
                     <label>
-                        <input autocomplete="email" type="email" id="email-signin" placeholder="Email" required/>
+                        <input autocomplete="email" type="email" id="email-signin" placeholder="Email" required autofocus pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/>
                     </label>
                     <label>
-                        <input autocomplete="password" type="password" id="password-signin" placeholder="Password" minlength="8" required/>
+                        <input autocomplete="password" type="password" id="password-signin" placeholder="Password" required/>
                     </label>
                     <p style="padding: 0;margin: 0;" id="frgpass">
-                        Incorrect password
+                        Incorrect password or email
                     </p>
                    
-                    <input type="submit" value="Sign In" class="submit-button" style="color: white;" onclick="signIn();return false">
+                    <input id="sign-in-btn" type="submit" value="Sign In" class="submit-button" style="color: white;" onclick="signIn();return false">
                     <!-- <button style="color: white;" onclick="SignIn(); return false">Sign In</button> -->
                 </form>
             </div>
@@ -67,58 +67,61 @@
         </div>
     </section>
     <script>
+        $("#frgpass").hide();
 
-    $("#frgpass").hide();
+        function signUp() {
+            const signupEmailInput = document.getElementById('email-signup');
+            const signupPasswordInput = document.getElementById('password-signup');
+            const nameInput = document.getElementById('name-signup');
+            
+            const email = signupEmailInput.value;
+            const password = signupPasswordInput.value;
+            const name = nameInput.value;
 
-    function signUp() {
-      const signupEmailInput = document.getElementById('email-signup');
-      const signupPasswordInput = document.getElementById('password-signup');
-      const nameInput = document.getElementById('name-signup');
-      
-      const email = signupEmailInput.value;
-      const password = signupPasswordInput.value;
-      const name = nameInput.value
+            if (email && password.length >= 8 && isValidEmail(email)) {
+                const userData = { email, password };
+                localStorage.setItem('userData', JSON.stringify(userData));
+                localStorage.setItem('logged', true);
+                localStorage.setItem('userName', name);
 
-      if (email && password) {
-        const userData = { email, password };
-        localStorage.setItem('userData', JSON.stringify(userData));
-        localStorage.setItem('logged',true)
-        localStorage.setItem('userName',name)
-
-        console.log('User signed up successfully:', userData);
-        window.location.href = 'home.html'
-      } else {
-        console.log('Please enter both username and password.');
-      }
-    }
-
-    function signIn() {
-        const signinEmailInput = document.getElementById('email-signin');
-      const signinPasswordInput = document.getElementById('password-signin');
-
-      const email = signinEmailInput.value;
-      const password = signinPasswordInput.value;
-
-
-      const userData = localStorage.getItem('userData');
-
-      if (userData) {
-        const savedUser = JSON.parse(userData);
-
-        if (email === savedUser.email && password === savedUser.password) {
-          console.log('User signed in successfully:', savedUser);
-          // Redirect to the main page or perform other actions
-          localStorage.setItem('logged',true)
-          window.location.href = 'home.html'
-        } else {
-            $("#frgpass").show();
-          console.log('Invalid email or password.');
+                console.log('User signed up successfully:', userData);
+                window.location.href = 'home.html';
+            } else {
+                alert('Invalid email, password, or name.');
+            }
         }
-      } else {
-        console.log('Please sign up first.');
-      }
-    }
 
+        function signIn() {
+            const signinEmailInput = document.getElementById('email-signin');
+            const signinPasswordInput = document.getElementById('password-signin');
+
+            const email = signinEmailInput.value;
+            const password = signinPasswordInput.value;
+
+            const userData = localStorage.getItem('userData');
+
+            if (userData) {
+                const savedUser = JSON.parse(userData);
+
+                if (email === savedUser.email && password === savedUser.password) {
+                    console.log('User signed in successfully:', savedUser);
+                    localStorage.setItem('logged', true);
+                    window.location.href = 'home.html';
+                } else {
+                    $("#frgpass").show();
+                    alert('Invalid email or password.');
+                }
+            } else {
+                alert('No signed in user');
+            }
+        }
+
+        function isValidEmail(email) {
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+    </script>
+    <script  src="/JavaScript/SignUp_script.js"></script>
     </script>
     <script  src="/JavaScript/SignUp_script.js"></script>
     </body>

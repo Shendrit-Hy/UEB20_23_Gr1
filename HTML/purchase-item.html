@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
   <script src="/JavaScript/check-if-signed-in.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <style>
     @font-face {
         font-family: 'Pre-Font';
@@ -186,7 +187,7 @@
             </div>
             <div class="field-container">
                 <label for="cardnumber">Card Number</label><span id="generatecard">generate random</span>
-                <input id="cardnumber" type="text" inputmode="numeric" required autocomplete="cardnumber">
+                <input id="cardnumber" type="text" inputmode="numeric" required autocomplete="cardnumber" minlength="19" maxlength="19">
                 <svg id="ccicon" class="ccicon" width="750" height="471" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
                 </svg>
@@ -265,11 +266,59 @@
   </footer>
   <script src="/JavaScript/card-purchase.js"></script>
   <script>
-    function redirect(){
-        window.location.href = 'abonimi.html'
+
+$(document).ready(function () {
+    $('.submit-button').click(function () {
+        try {
+            var name = $('#name').val();
+            var cardnumber = $('#cardnumber').val();
+            var expirationdate = $('#expirationdate').val();
+            var securitycode = $('#securitycode').val();
+
+            if (name === '' || address === '' || cardnumber === '' || expirationdate === '' || securitycode === '') {
+                throw new Error('Mbushi t\u00EB gjitha fushat');
+            }
+
+            if (cardnumber.length !== 19) {
+                throw new Error('Numri karteles nuk \u00EBsht\u00EB valide');
+            }
+
+            if (securitycode.length !== 3) {
+                throw new Error('Numri siguris nuk \u00EBsht\u00EB valid');
+            }
+
+            if (expirationdate.length !== 5) {
+                throw new Error('Data nuk \u00EBsht\u00EB valide');
+            }
+
+        } catch (error) {
+            alert(error.message);
+            return false;
+        }
+    });
+});
+
+function redirect(){
+          if(localStorage.getItem('logged')){
+            window.location.href = 'abonimi.html'
+          }
+          else{
+            window.location.href = 'SignUp.html'
+          }
+          
+        }
+
+ifLogIn();
+
+function supplement(){
+      if(localStorage.getItem('logged')){
+          window.location.href = 'supplements.html'
+      }
+      else{
+          window.location.href = 'SignUp.html'
+      }       
     }
 
-    ifLogIn()
   </script>
 </body>
 </html>
