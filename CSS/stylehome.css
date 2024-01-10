@@ -29,6 +29,8 @@ body{
   background-size:contain;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-origin: padding-box;
 }
 .welcome-text {
   /* color: #202124; */

@@ -10,4 +10,86 @@ body{
   width: 90%;
   /* background-color: red; */
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pershkrimi{
+  margin-top: 50px;
+  width: 90%;
+  /* background-color: red; */
+  border: 2px dotted #0f969c;
+}
+.test-table{
+  margin-top: 50px;
+  width: 90%;
+  /* height: 50px; */
+  /* background-color: red; */
+  border: 5px double #0f969c;
+}
+.test-form{
+  margin-top: 50px;
+  width: 90%;
+  height: 100px;
+  outline-style:ridge;
+  outline-color:#0f969c;
+  outline-width:10px;
+  outline-offset:2px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.forma-radio{
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.forma-check{
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.test-form-left{
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+  /* background-color: red; */
+}
+.test-form-right{
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+  /* background-color: lime; */
+}
+.test-photos{
+  margin-top: 50px;
+  width: 90%;
+  /* background-color: red; */
+  /* border: 2px solid #0f969c; */
+  height: 300px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.test-photos-left{
+  width: 50%;
+  height: 86%;
+  border: 20px solid transparent;
+  border-image: url(/Images/About-image.jpg) 30 round;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+.test-photos-right{
+  width: 50%;
+  height: 100%;
+  background:rgb(39, 68, 255) url(/Images/About-3.jpg) no-repeat center; 
+  background-size: cover;
 }

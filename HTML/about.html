@@ -12,6 +12,15 @@
   <link rel="stylesheet" href="/CSS/scrollbar.css">
   <link rel="stylesheet" href="/CSS/about.css">
   <script src="/JavaScript/check-if-signed-in.js"></script>
+  <style>
+    table, th, td {
+      border: 1px solid #0f969c;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 15px;
+    }
+  </style>
 </head>
 <body>
   <div class="nav-container ">
@@ -40,7 +49,7 @@
     </div>
   </div>
   <div class="container">
-    <div class="pershkrimi">
+    <section class="pershkrimi">
       <p>
         Mirë se vini në faqen tonë të internetit Super Nova, një faqe e punuar rreth Fitnesit dhe Mënyrës së të ushqyerit. Ky projekt, i udhëhequr nga Profesor Ass.Dr. Dhuratë Hyseni dhe mbështetur nga M.Sc. Dalinë Vranovci, u fokusua në zhvillimin e një platforme gjithëpërfshirëse në WEB duke përdorur HTML5, CSS, CSS3, Bootstrap, JavaScript dhe JQuery.<br>
         Disa nga pikat kryesore të cilat kanë qenë të detyrueshme janë:
@@ -61,9 +70,67 @@
             </ul>
           </li>
        </ol>
+       Për arsye se ne nuk kemi mundur që ti përfshijmë të gjitha kërkesat brenda faqeve kryesore kemi vendosur që në këtë faqe t'i vendosim pjesën e mbetur. 
+   <br>Përdorimi i disa shkonjave si ( &#231;, &euml;, &#xc7, &#203; ) ka qenë i pamundur për faktin se website-i është në gjuhën angleze. 
       </p>
       
-    </div>
+    </section>
+    <section class="test-table">
+      <table style="width: 100%; height: 100px; border-spacing: 30px;">
+        <tr>
+          <th><p style="font-size: 20px; font-weight: bold;">Emri</p></th>
+          <th><u>Yll</u></th>
+          <th><u>Yll</u></th>
+          <th><u>Yll</u></th>
+          <th><u>Shëndrit</u></th>
+          <th><u>Valdet</u></th>
+        </tr>
+        <tr>
+          <th><p style="font-size: 20px; font-weight: bold;">Mbiemri</p></th>
+          <th><i>Kosumi</i></th>
+          <th><i>Jupolli</i></th>
+          <th><i>Pllana</i></th>
+          <th><i>Hyseni</i></th>
+          <th><i>Nurkasa</i></th>
+        </tr>
+      </table>
+    </section>
+    <section class="test-form">
+        <div class="test-form-left">
+          <p>Zgjedhni faqen tuaj të preferuar (Vetëm një faqe)</p>
+          <form class="forma-radio">
+            <input type="radio" id="home" name="preferenca" value="Home">
+            <label for="home">Home</label><br>
+            <input type="radio" id="supplements" name="preferenca" value="Supplements">
+            <label for="supplements">Supplements</label><br>
+            <input type="radio" id="bmi" name="preferenca" value="BMI">
+            <label for="bmi">BMI</label>
+            <input type="radio" id="about" name="preferenca" value="About">
+            <label for="about">About</label>
+            <input type="radio" id="contact" name="preferenca" value="Contact">
+            <label for="contact">Contact</label>
+          </form>
+        </div>
+        <div class="test-form-right">
+          <p>Zgjedhni faqet tuaja të preferuara</p>
+          <form class="forma-check">
+            <input type="checkbox" id="home" name="preferenca" value="Home">
+            <label for="home">Home</label><br>
+            <input type="checkbox" id="supplements" name="preferenca" value="Supplements">
+            <label for="supplements">Supplements</label><br>
+            <input type="checkbox" id="bmi" name="preferenca" value="BMI">
+            <label for="bmi">BMI</label>
+            <input type="checkbox" id="about" name="preferenca" value="About">
+            <label for="about">About</label>
+            <input type="checkbox" id="contact" name="preferenca" value="Contact">
+            <label for="contact">Contact</label>
+          </form>
+        </div>
+    </section>
+    <section class="test-photos">
+        <div class="test-photos-left"><p>Here we used the border-image</p></div>
+        <div class="test-photos-right"></div>
+    </section>
 
   </div>
 
