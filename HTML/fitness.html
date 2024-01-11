@@ -75,78 +75,174 @@
             </li>
           </ul>
         </div>
-        <button class="btn btn-primary" id="removeButton">Remove exercise</button>
-
-          
+        <button class="btn btn-primary" id="removeButton">Exercise Done</button>
         </div>
       </div>
   
-  <div class="d-flex flex-column justify-content-center" style="margin-left:15% ;">
+  <div class="d-flex flex-column justify-content-center" style="margin-left:10% ;">
   <!-- <div class="container text-center" style="background-color: #0f959cb9; color: white;">
     <h1 style="font-size: 10vh;">SuperNova</h1>
     <h2>Fitness Zone</h2>
   </div> -->
-  <div class="container mt-5"></div>
-  <div class="container mt-5"></div>
-  <div class="container mt-5"></div>
-  <div class="container mt-5"></div>
-  <div class="container mt-5 timer-container">
-    <div class="row align-items-center justify-content-center">
-      <div class="counter text-center">
-        <button class="btn custom-btn increase" data-target="hour-2"><span class="material-symbols-outlined">expand_less</span></button>
-        <h1 id="hour-2">0</h1>
-        <button class="btn custom-btn decrease" data-target="hour-2"><span class="material-symbols-outlined">expand_more</span></button>
+  <div class="container mt-10">
+    <div class="container mt-5 timer-container flex-row">
+      <div class="row align-items-center justify-content-center">
+        <div class="counter text-center">
+          <button class="btn custom-btn increase" data-target="hour-2"><span class="material-symbols-outlined">expand_less</span></button>
+          <h1 id="hour-2">0</h1>
+          <button class="btn custom-btn decrease" data-target="hour-2"><span class="material-symbols-outlined">expand_more</span></button>
+        </div>
+        <div class="counter text-center">
+          <button class="btn custom-btn increase" data-target="hour-1"><span class="material-symbols-outlined">expand_less</span></button>
+          <h1 id="hour-1">0</h1>
+          <button class="btn custom-btn decrease" data-target="hour-1"><span class="material-symbols-outlined">expand_more</span></button>
+        </div>
+        <div class="counter" id="semi-colon">
+          <h1>:</h1>
+        </div>
+        <div class="counter text-center">
+          <button class="btn custom-btn increase" data-target="minute-2"><span class="material-symbols-outlined">expand_less</span></button>
+          <h1 id="minute-2">0</h1>
+          <button class="btn custom-btn decrease" data-target="minute-2"><span class="material-symbols-outlined">expand_more</span></button>
+        </div>
+        <div class="counter text-center">
+          <button class="btn custom-btn increase" data-target="minute-1"><span class="material-symbols-outlined">expand_less</span></button>
+          <h1 id="minute-1">0</h1>
+          <button class="btn custom-btn decrease" data-target="minute-1"><span class="material-symbols-outlined">expand_more</span></button>
+        </div>
+        <div class="counter" id="semi-colon">
+          <h1>:</h1>
+        </div>
+        <div class="counter text-center">
+          <button class="btn custom-btn increase" data-target="second-2"><span class="material-symbols-outlined">expand_less</span></button>
+          <h1 id="second-2">0</h1>
+          <button class="btn custom-btn decrease" data-target="second-2"><span class="material-symbols-outlined">expand_more</span></button>
+        </div>
+        <div class="counter text-center" id="second">
+          <button class="btn custom-btn increase" data-target="second-1"><span class="material-symbols-outlined">expand_less</span></button>
+          <h1 id="second-1">0</h1>
+          <button class="btn custom-btn decrease" data-target="second-1"><span class="material-symbols-outlined">expand_more</span></button>
+        </div>
       </div>
-      <div class="counter text-center">
-        <button class="btn custom-btn increase" data-target="hour-1"><span class="material-symbols-outlined">expand_less</span></button>
-        <h1 id="hour-1">0</h1>
-        <button class="btn custom-btn decrease" data-target="hour-1"><span class="material-symbols-outlined">expand_more</span></button>
-      </div>
-      <div class="counter" id="semi-colon">
-        <h1>:</h1>
-      </div>
-      <div class="counter text-center">
-        <button class="btn custom-btn increase" data-target="minute-2"><span class="material-symbols-outlined">expand_less</span></button>
-        <h1 id="minute-2">0</h1>
-        <button class="btn custom-btn decrease" data-target="minute-2"><span class="material-symbols-outlined">expand_more</span></button>
-      </div>
-      <div class="counter text-center">
-        <button class="btn custom-btn increase" data-target="minute-1"><span class="material-symbols-outlined">expand_less</span></button>
-        <h1 id="minute-1">0</h1>
-        <button class="btn custom-btn decrease" data-target="minute-1"><span class="material-symbols-outlined">expand_more</span></button>
-      </div>
-      <div class="counter" id="semi-colon">
-        <h1>:</h1>
-      </div>
-      <div class="counter text-center">
-        <button class="btn custom-btn increase" data-target="second-2"><span class="material-symbols-outlined">expand_less</span></button>
-        <h1 id="second-2">0</h1>
-        <button class="btn custom-btn decrease" data-target="second-2"><span class="material-symbols-outlined">expand_more</span></button>
-      </div>
-      <div class="counter text-center" id="second">
-        <button class="btn custom-btn increase" data-target="second-1"><span class="material-symbols-outlined">expand_less</span></button>
-        <h1 id="second-1">0</h1>
-        <button class="btn custom-btn decrease" data-target="second-1"><span class="material-symbols-outlined">expand_more</span></button>
-      </div>
-    </div>
-    <div class="row justify-content-center mt-4">
-      <div class="col-3 text-center">
-        <button class="btn btn-primary btn-lg" id="startButton">Start</button>
-      </div>
-      <div class="col-3 text-center">
-        <button class="btn btn-warning btn-lg" id="stopButton">Stop</button>
-      </div>
-      <div class="col-3 text-center"> 
-        <button class="btn btn-danger btn-lg" id="resetButton">Reset</button>
+      <div class="row justify-content-center mt-4">
+        <div class="col-3 text-center">
+          <button class="btn btn-primary btn-lg" id="startButton">Start</button>
+        </div>
+        <div class="col-3 text-center">
+          <button class="btn btn-warning btn-lg" id="stopButton">Stop</button>
+        </div>
+        <div class="col-3 text-center"> 
+          <button class="btn btn-danger btn-lg" id="resetButton">Reset</button>
+        </div>
       </div>
     </div>
+  </div>
+  <div class="custom-container-right">
+    <iframe id="exercise-video" src="https://www.youtube.com/embed/Q4c-2BhKvBo" frameborder="0" height="100%" width="100%"></iframe>
   </div>
   
-  </div>
+
 
   <script>
 
+    // const exercises = [
+    //   {
+    //     ID : 'Chest-1',
+    //     link : ''
+    //   }
+    // ]
+
+    const exerciseVideoMap = new Map([
+      ["Default","Q4c-2BhKvBo"],
+      ["Bench Press", "0cXAp6WhSj4"],
+      ["Push-ups", "y7PBQ2fYbxY"],
+      ["Chest Flyes", "Jz7oEmzhnfE"],
+      ["Dumbbell Press", "3zK-QobOkHg"],
+      ["Incline Bench Press", "MRmeUet5VUw"],
+      ["Cable Crossover", "tGXIQR89-JE"],
+
+      ["Deadlifts", "vfKwjT5-86k"],
+      ["Pull-ups", "dvG8B2OjfWk"],
+      ["Bent-over Rows", "Nqh7q3zDCoQ"],
+      ["Lat Pulldowns", "77bPLrsMwiQ"],
+      ["T-Bar Rows", "8c23NBbwLBc"],
+      ["Face Pulls", "LJN-sT_6OYY"],
+
+      ["Overhead Press", "dyv6g4xBFGU"],
+      ["Lateral Raises", "G-piLwLu0d4"],
+      ["Front Raises", "yHx8wPv4RPo"],
+      ["Shrugs", "kG4qXCYvITg"],
+      ["Upright Rows", "AWsGWt-VMl8"],
+      ["Arnold Press", "6K_N9AGhItQ"],
+
+      ["Squats", "gslEzVggur8"],
+      ["Lunges", "LCWWq3Lx2Sk"],
+      ["Deadlifts", "vfKwjT5-86k"],
+      ["Leg Press", "obqVU1u3Bfk"],
+      ["Leg Extensions", "fP6uMgfwqOA"],
+      ["Calf Raises", "OscsK8RMelQ"],
+
+      ["Crunches", "ZKw4t23ERuw"],
+      ["Planks", "v25dawSzRTM"],
+      ["Leg Raises", "6mDUQZTdrtM"],
+      ["Russian Twists", "BA-uP_-bVE8"],
+      ["Bicycle Crunches", "CakPX7X-mSw"],
+      ["Mountain Climbers", "9yyKVy8OWnA"],
+
+      ["Bicep Curls", "2jpteC44QKg"],
+      ["Tricep Dips", "Goy5WkxbAi0"],
+      ["Hammer Curls", "ZzJs4BLnhCw"],
+      ["Tricep Kickbacks", "3Bv1n7-DN7c"],
+      ["Preacher Curls", "Htw-s61mOw0"],
+      ["Skull Crushers", "zR9gty7LUxE"],
+
+      ["Burpees", "zlYA1SENYG4"],
+      ["Clean and Jerk", "sqTDWYlVgBQ"],
+      ["Thrusters", "RqRX_PfMJ5A"],
+      ["Kettlebell Swings", "SR_4kUbkEaw"],
+      ["Turkish Get-ups", "-dfk79o6iHI"],
+      ["Medicine Ball Slams", "cgKqNn90MEo"],
+    ]);
+
+    function updateIframe(videoId) {
+      if($('.sortable-list li:first-child')){
+        var iframeSrc = "https://www.youtube.com/embed/" + videoId;
+        $('#exercise-video').attr('src', iframeSrc);
+      }
+      
+    }
+
+    function checkExercise() {
+      if ($('.sortable-list li:first-child').text() !== ""){
+        var text = $('.sortable-list li:first-child').text()
+        var exerciseID = $('.sortable-list li:first-child').attr('data-video-id')
+        if (text.includes(" - Active")) {} 
+        else {
+          $('.sortable-list li:first-child').text(text+" - Active")
+          if(text.includes("Exercise")){
+            var videoId = exerciseVideoMap.get("Default");
+            updateIframe(videoId);
+          }
+          else if(text !== ""){
+            var videoId = exerciseVideoMap.get(exerciseID);
+            updateIframe(videoId);
+          }
+          else{
+            var videoId = exerciseVideoMap.get("Default");
+            updateIframe(videoId);
+          }
+        }
+        for (var i = 2 ; i < 7 ; i++){
+          var text2 = $('.sortable-list li:nth-child('+i+')').text()
+          $('.sortable-list li:nth-child('+i+')').text(text2.replace(' - Active',''))
+        }
+      }
+    }
+
+    setInterval(checkExercise, 500);
+
     $(document).ready(function () {
+      
         $("#startButton").click(function () {
             $("#stopButton").stop().animate({
                 fontSize: "20px", 
@@ -285,31 +381,7 @@
                   audio.play();
                   break;
         default:break;
-      }
-
-      if(totalSeconds === 300){
-        var audio = new Audio('/Audio/5-minutes.mp3');
-        audio.play();
-      }
-      else if(totalSeconds === 120){
-        var audio = new Audio('/Audio/5-minutes.mp3');
-        audio.play();
-      }
-      else if(totalSeconds === 120){
-        var audio = new Audio('/Audio/5-minutes.mp3');
-        audio.play();
-      }
-      else if(totalSeconds === 120){
-        var audio = new Audio('/Audio/5-minutes.mp3');
-        audio.play();
-      }
-      else if(totalSeconds === 120){
-        var audio = new Audio('/Audio/5-minutes.mp3');
-        audio.play();
-      }
-
-      
-
+      }      
       myCallback();
     }
 
@@ -326,7 +398,7 @@
 
 
     document.getElementById('startButton').addEventListener('click', () => {
-      disableButtons(true);
+      disableButtons(true)
       clearInterval(countdownInterval);
       countdownInterval = setInterval(() => {
         updateClockWithCallback(() => {
@@ -398,7 +470,7 @@
         const ul = $('<ul>').addClass('sortable-list').attr('id', selectedCategory + 'List');
 
         exerciseData[selectedCategory].forEach(exercise => {
-          const li = $('<li>').addClass('item').attr('draggable', true);
+          const li = $('<li>').addClass('item').attr('draggable', true).attr('data-video-id',exercise);
           const detailsDiv = $('<div>').addClass('details');
           const span = $('<span>').text(exercise);
           const dotsIcon = $('<i>').addClass('uil uil-draggabledots');
