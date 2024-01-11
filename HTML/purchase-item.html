@@ -210,8 +210,8 @@
   <footer>
     <article>
       <h2 style="margin-left: 70px;">Try <strong><i>Super Nova</i></strong> today.</h2>
-      <button style="margin-right: 60px;" class="footer-button" onclick="redirect(); return false">
-        <p>Get Plan</p>
+      <button style="margin-right: 60px;" class="footer-button" onclick="fitness(); return false">
+        <p>Workout NOW!</p>
         <span class="material-symbols-outlined"> trending_flat </span>
       </button>
     </article>
@@ -266,6 +266,9 @@
   </footer>
   <script src="/JavaScript/card-purchase.js"></script>
   <script>
+    function fitness(){
+      window.location.href = 'fitness.html'
+    }
 
 $(document).ready(function () {
     $('.submit-button').click(function () {
@@ -319,8 +322,6 @@ function supplement(){
           window.location.href = 'SignUp.html'
       }       
     }
-
-
 
   </script>
 </body>

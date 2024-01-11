@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign Up</title>
     <link rel="stylesheet" href="/CSS/SignUp_style.css">
     <link rel="icon" href="/Images/logo-transparent.png">
     <script src="/JavaScript/check-if-signed-in.js"></script>
@@ -69,6 +69,17 @@
     <script>
         $("#frgpass").hide();
 
+        function isValidEmail(email) {
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+        function isValidPassword(password) {
+            return password.length >= 8;
+        }
+        function isValidName(name) {
+            return name.length > 0;
+        }
+
         function signUp() {
             const signupEmailInput = document.getElementById('email-signup');
             const signupPasswordInput = document.getElementById('password-signup');
@@ -81,7 +92,7 @@
             var temp = name;
             name = temp.replace("!","")
 
-            if (email && password.length >= 8 && isValidEmail(email)) {
+            if (isValidEmail(email) && isValidPassword(password) && isValidName(name)) {
                 const userData = { email, password };
                 localStorage.setItem('userData', JSON.stringify(userData));
                 localStorage.setItem('logged', true);
@@ -131,11 +142,6 @@
 
             var matches = email.match(pattern)
             console.log(matches)
-        }
-
-        function isValidEmail(email) {
-            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailPattern.test(email);
         }
     </script>
     <script  src="/JavaScript/SignUp_script.js"></script>

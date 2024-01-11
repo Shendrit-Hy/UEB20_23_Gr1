@@ -1,3 +1,4 @@
+
 let originalPrice = 0;
 let purchases = 1;
 
@@ -10,147 +11,147 @@ var productId;
 const items = [
     {
         id: 1,
-        name: '1',
+        name: 'Item 1',
         type: 'Supplement',
         price: 55.00,
         imagePath: '/Images/item-1.png'
     },
     {
         id: 2,
-        name: '1',
+        name: 'Item 2',
         type: 'Supplement',
         price: 60.00,
         imagePath: '/Images/item-2.png'
     },
     {
         id: 3,
-        name: '1',
+        name: 'Item 3',
         type: 'Supplement',
         price: 70.00,
         imagePath: '/Images/item-3.png'
     },
     {
         id: 4,
-        name: '1',
+        name: 'Item 4',
         type: 'Supplement',
         price: 80.00,
         imagePath: '/Images/item-4.png'
     },
     {
         id: 5,
-        name: '1',
+        name: 'Item 5',
         type: 'Supplement',
         price: 30.00,
         imagePath: '/Images/item-5.png'
     },
     {
         id: 6,
-        name: '1',
+        name: 'Item 6',
         type: 'Supplement',
         price: 50.00,
         imagePath: '/Images/item-6.png'
     },
     {
         id: 7,
-        name: '1',
+        name: 'Item 7',
         type: 'Supplement',
         price: 55.00,
         imagePath: '/Images/item-7.png'
     },
     {
         id: 8,
-        name: '1',
+        name: 'Item 8',
         type: 'Supplement',
         price: 55.00,
         imagePath: '/Images/item-8.png'
     },
     {
         id: 9,
-        name: '1',
+        name: 'Item 9',
         type: 'Supplement',
         price: 55.00,
         imagePath: '/Images/item-9.png'
     },
     {
         id: 10,
-        name: '1',
+        name: 'Item 10',
         type: 'Plan',
         price: 20.00,
         imagePath: '/Images/plan-1.png'
     },
     {
         id: 11,
-        name: '1',
+        name: 'Item 11',
         type: 'Plan',
         price: 30.00,
         imagePath: '/Images/plan-2.png'
     },
     {
         id: 12,
-        name: '1',
+        name: 'Item 12',
         type: 'Plan',
         price: 40.00,
         imagePath: '/Images/plan-3.png'
     },
     {
         id: 13,
-        name: '1',
+        name: 'Item 13',
         type: 'Plan',
         price: 50.00,
         imagePath: '/Images/plan-4.png'
     },
     {
         id: 14,
-        name: '1',
+        name: 'Item 14',
         type: 'Plan',
         price: 100.00,
         imagePath: '/Images/plan-5.png'
     },
     {
         id: 15,
-        name: '1',
+        name: 'Item 15',
         type: 'Plan',
         price: 150.00,
         imagePath: '/Images/plan-6.png'
     },
     {
         id: 16,
-        name: '1',
+        name: 'Item 16',
         type: 'Plan',
         price: 200.00,
         imagePath: '/Images/plan-7.png'
     },
     {
         id: 17,
-        name: '1',
+        name: 'Item 17',
         type: 'Plan',
         price: 250.00,
         imagePath: '/Images/plan-8.png'
     },
     {
         id: 18,
-        name: '1',
+        name: 'Item 18',
         type: 'Plan',
         price: 200.00,
         imagePath: '/Images/plan-9.png'
     },
     {
         id: 19,
-        name: '1',
+        name: 'Item 19',
         type: 'Plan',
         price: 300.00,
         imagePath: '/Images/plan-10.png'
     },
     {
         id: 20,
-        name: '1',
+        name: 'Item 20',
         type: 'Plan',
         price: 400.00,
         imagePath: '/Images/plan-11.png'
     },
     {
         id: 21,
-        name: '1',
+        name: 'Item 21',
         type: 'Plan',
         price: 500.00,
         imagePath: '/Images/plan-12.png'
@@ -188,6 +189,7 @@ window.onload = function () {
     //     '8':55.00,
     //     '9':55.00,
     // }
+    
 
     const findItem = items.find(item => item.id === parseInt(productId))
 
@@ -567,9 +569,36 @@ localStorage.setItem(localStorage.getItem('purchase'), JSON.stringify(purchaseDe
 console.log("verifikimi")
 setTimeout(function(){
   console.log("2")
+
 },2000);
 console.log('asdf')
 
 window.location.href = 'Succesful-purchase.html'
 
 });
+
+const totalPrices = items.reduce((accumulator, item) => accumulator + item.price, 0);
+console.log("Using reduce: totalPrice:" +totalPrices);
+
+const itemNames = items.map(item => item.name);
+console.log("Using map: itemNames:" + itemNames);
+
+const supplements = items.filter(item => item.type === 'Supplement');
+// console.log("Using filter: supplements:" + supplements);
+console.log(JSON.stringify(supplements, null, 2))
+
+const expensiveItems = [];
+for (let i = 0; i < items.length; i++) {
+    if (items[i].price > 200) {
+        expensiveItems.push(items[i]);
+    }
+}
+console.log(expensiveItems);
+
+let i = 0;
+let totalPrices2 = 0;
+while (i < items.length) {
+    totalPrices2 += items[i].price;
+    i++;
+}
+console.log("totalPrices with While:" + totalPrices2);

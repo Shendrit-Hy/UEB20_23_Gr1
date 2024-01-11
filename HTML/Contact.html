@@ -160,8 +160,8 @@
   <footer>
     <article>
       <h2 style="margin-left: 70px;">Try <strong><i>Super Nova</i></strong> today.</h2>
-      <button style="margin-right: 60px;" class="footer-button" onclick="redirect(); return false">
-        <p style="margin-top: 15px;">Get Plan</p>
+      <button style="margin-right: 60px;" class="footer-button" onclick="fitness(); return false">
+        <p style="margin-top: 15px;">Workout NOW!</p>
         <span class="material-symbols-outlined"> trending_flat </span>
       </button>
     </article>
@@ -215,6 +215,10 @@
     <section class="bottom">© 2023 Super Nova</section>
   </footer>
   <script>
+
+    function fitness(){
+      window.location.href = 'fitness.html'
+    }
 
     $(document).ready(function(){
       $('.container').fadeTo("2000",1);
