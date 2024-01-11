@@ -266,6 +266,45 @@
   </footer>
   <script src="/JavaScript/card-purchase.js"></script>
   <script>
+
+    function Product(name, price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    Product.prototype.calculateTotal = function(quantity) {
+      return this.price * quantity;
+    };
+
+    function ProductID(id, type) {
+        this.id = id;
+        this.type = type;
+    }
+
+    Product.prototype.calculateTotal = function(quantity) {
+      return this.price * quantity;
+    };
+
+    function FullProduct(id,name,price,type){
+      this.id = id;
+      this.type = type;
+      this.name = name;
+      this.price = price;
+    }
+
+    var product1ID = new Product(1, "Supplement");
+    var product2ID = new Product(2, "Supplement");
+    var product3ID = new Product(3, "Supplement");
+
+    var product1 = new Product("Mass Tech", 55.00);
+    var product2 = new Product("Extreme Mass", 60.00);
+    var product3 = new Product("Animal Cuts", 70.00);
+
+    var FullProduct1 = new FullProduct(product1ID.id,product1.name,product1.price,product1ID.type)
+
+    console.log(FullProduct1);
+
+
     function fitness(){
       window.location.href = 'fitness.html'
     }

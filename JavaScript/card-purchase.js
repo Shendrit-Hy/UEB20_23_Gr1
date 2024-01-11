@@ -55,21 +55,21 @@ const items = [
         id: 7,
         name: 'Item 7',
         type: 'Supplement',
-        price: 55.00,
+        price: 50.00,
         imagePath: '/Images/item-7.png'
     },
     {
         id: 8,
         name: 'Item 8',
         type: 'Supplement',
-        price: 55.00,
+        price: 25.00,
         imagePath: '/Images/item-8.png'
     },
     {
         id: 9,
         name: 'Item 9',
         type: 'Supplement',
-        price: 55.00,
+        price: 30.00,
         imagePath: '/Images/item-9.png'
     },
     {

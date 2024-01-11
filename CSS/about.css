@@ -119,15 +119,21 @@ body{
 .test-forms-left{
   width: 33%;
   height: 100%;
-  background-color: limegreen;
+  background-color: #202124;
+  padding-right:5px ;
 }
 .test-forms-middle{
   width: 33%;
   height: 100%;
-  background-color: red;
+  background-color: #202124;
+  padding-left: 5px;
+  background-color: #202124;
+  border-left: 1px solid #0f969c;
 }
 .test-forms-right{
   width: 33%;
   height: 100%;
-  background-color: aqua;
+  padding-left: 5px;
+  background-color: #202124;
+  border-left: 1px solid #0f969c;
 }
