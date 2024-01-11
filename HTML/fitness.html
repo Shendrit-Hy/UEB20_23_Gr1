@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
   <title>Fitness Zone</title>
   <link rel="stylesheet" href="/CSS/fintesszone.css">
-  <link rel="stylesheet" href="/CSS/style.css">
+  <link rel="stylesheet" href="/CSS/fitness.css">
   <link rel="icon" href="/Images/logo-transparent.png">
-  <script src="/JavaScript/script.js"></script>
+  <script src="/JavaScript/fitness.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
@@ -146,6 +146,38 @@
 
   <script>
 
+    $(document).ready(function () {
+        $("#startButton").click(function () {
+            $("#stopButton").stop().animate({
+                fontSize: "20px", 
+            }, 500); 
+            
+            $(this).animate({
+                fontSize: "30px", 
+            }, 500); 
+        });
+
+        $("#stopButton").click(function () {
+            $("#startButton").stop().animate({
+                fontSize: "20px",
+            }, 500);
+
+            $(this).animate({
+                fontSize: "30px",
+            }, 500);
+        });
+
+        $("#resetButton").click(function () {
+            $("#startButton").stop().animate({
+                fontSize: "20px", 
+            }, 500); 
+            $("#stopButton").stop().animate({
+                fontSize: "20px",
+            }, 500);
+        });
+
+    });
+
     function myCallback() {
       console.log('Callback executed!');
       console.log('1 second at a time!')
@@ -194,6 +226,9 @@
 
       if (totalSeconds === 0 || totalSeconds < 0) {
             console.log("Timer completed!");
+            $("#startButton").stop().animate({
+                fontSize: "20px", 
+            }, 500); 
             disableButtons(false)
             resetTimer()
       }
@@ -206,22 +241,89 @@
       document.getElementById('second-1').textContent = seconds % 10;
       }
 
+      switch(totalSeconds){
+        case 299: var audio = new Audio('/Audio/5-minutes.mp3');
+                  audio.play();
+                  break;
+        case 119: var audio = new Audio('/Audio/2-minutes.mp3');
+                  audio.play();
+                  break;
+        case 59: var audio = new Audio('/Audio/1-minute.mp3');
+                  audio.play();
+                  break;
+        case 29: var audio = new Audio('/Audio/30-seconds.mp3');
+                  audio.play();
+                  break;
+        case 10: var audio = new Audio('/Audio/10s.mp3');
+                  audio.play();
+                  break;
+        case 9: var audio = new Audio('/Audio/9s.mp3');
+                  audio.play();
+                  break;
+        case 8: var audio = new Audio('/Audio/8s.mp3');
+                  audio.play();
+                  break;
+        case 7: var audio = new Audio('/Audio/7s.mp3');
+                  audio.play();
+                  break;
+        case 6: var audio = new Audio('/Audio/6s.mp3');
+                  audio.play();
+                  break;
+        case 5: var audio = new Audio('/Audio/5s.mp3');
+                  audio.play();
+                  break;
+        case 4: var audio = new Audio('/Audio/4s.mp3');
+                  audio.play();
+                  break;
+        case 3: var audio = new Audio('/Audio/3s.mp3');
+                  audio.play();
+                  break;
+        case 2: var audio = new Audio('/Audio/2s.mp3');
+                  audio.play();
+                  break;
+        case 1: var audio = new Audio('/Audio/1s.mp3');
+                  audio.play();
+                  break;
+        default:break;
+      }
+
+      if(totalSeconds === 300){
+        var audio = new Audio('/Audio/5-minutes.mp3');
+        audio.play();
+      }
+      else if(totalSeconds === 120){
+        var audio = new Audio('/Audio/5-minutes.mp3');
+        audio.play();
+      }
+      else if(totalSeconds === 120){
+        var audio = new Audio('/Audio/5-minutes.mp3');
+        audio.play();
+      }
+      else if(totalSeconds === 120){
+        var audio = new Audio('/Audio/5-minutes.mp3');
+        audio.play();
+      }
+      else if(totalSeconds === 120){
+        var audio = new Audio('/Audio/5-minutes.mp3');
+        audio.play();
+      }
+
+      
+
       myCallback();
     }
 
     const buttons = document.querySelectorAll('.increase, .decrease');
     let countdownInterval;
 
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        const targetId = button.getAttribute('data-target');
-        const operation = button.classList.contains('increase') ? 'increase' : 'decrease';
-        
-        const limit = (targetId === 'minute-2' || targetId === 'second-2') ? 5 : 9;
+    $('.increase, .decrease').click(function() {
+    const targetId = $(this).attr('data-target');
+    const operation = $(this).hasClass('increase') ? 'increase' : 'decrease';
+    
+    const limit = (targetId === 'minute-2' || targetId === 'second-2') ? 5 : 9;
+    updateNumber(targetId, operation, limit);
+});
 
-        updateNumber(targetId, operation, limit);
-      });
-    });
 
     document.getElementById('startButton').addEventListener('click', () => {
       disableButtons(true);
